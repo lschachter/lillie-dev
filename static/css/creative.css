@@ -60,6 +60,17 @@ p {
     line-height: 1.5;
 }
 
+.icon {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-style: none;
+}
+
+.about-img {
+    max-width: 400px;
+}
+
 .bg-primary {
     background-color: #00515e;
 }
@@ -268,11 +279,6 @@ header .header-content .header-content-inner p {
 }
 
 .portfolio-box {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%);
     display: block;
     position: relative;
     margin: 0 auto;

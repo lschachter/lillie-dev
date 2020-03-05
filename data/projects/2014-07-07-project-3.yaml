@@ -1,8 +1,168 @@
 modalID: 3
 title: Sorting
-date: 2014-07-07
+date: 2020-02-01
 img: sorting.jpg
-client: Start Bootstrap
-clientLink: "#"
+client: See More
+clientLink: "https://github.com/lschachter/algorithm-practice/blob/master/Sorting.ipynb"
 category: Problems
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel enim aliquid dicta ullam in repellendus amet perspiciatis adipisci architecto obcaecati sit voluptas ipsam, deleniti neque placeat tenetur cum tempore velit.
+description: |
+    ### **Merge Into Array**
+
+    **Prompt**
+
+    Given two sorted integer arrays `nums1` and `nums2`, merge `nums2` into `nums1` as one sorted array. Note: The number of elements initialized in `nums1` and `nums2` are `m` and `n` respectively. You may assume that `nums1` has enough space (size that is greater or equal to `m + n`) to hold additional elements from `nums2`. Do not return anything, modify `nums1` in-place instead.
+    
+    **Solution**
+
+    This one is tricky. You need to utilize the empty space at the end of the first array by inserting BACKWARDS, from the largest to the smallest, so that you don't need to worry about swapping any numbers/keeping track of stuff.
+    ~~~~
+    so set pointers to: nums1[-1] (k), nums1[n-1] (i), nums2[m-1]*j)
+    for _ in range(n + m): put the > el of nums1[i] and nums2[j] at k,
+        -= k and whichever i or j you chose from. 
+    guards: if j is ever < 0, you're done because the rest of nums1 is
+    already sorted. if i is ever < 0, you can slice the rest of nums2
+    into 0-k of nums1
+    if n == 0: return
+    ~~~~
+
+    **Space and Time Complexity**
+
+    Runtime is `O(n + m)` because you just loop through all of the nums once, and since we're using the space already provided for the merging, space is actually `O(1)`.
+
+    ```python3
+    class MergeIntoArray:
+        def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+            if n == 0: return nums1
+            if m == 0:
+                nums1[:] = nums2[:]
+                return nums1
+            total = len(nums1)
+            i = m - 1
+            j = n - 1
+            k = total - 1
+            
+            for _ in range(total):
+                if j < 0:
+                    return nums1
+                if i < 0:
+                    nums1[:k + 1] = nums2[:j + 1]
+                    return nums1
+                if nums1[i] > nums2[j]:
+                    nums1[k] = nums1[i]
+                    i -= 1
+                else:
+                    nums1[k] = nums2[j]
+                    j -= 1
+                k -= 1
+            return nums1
+    ```
+
+    ### **Sort Colors**
+
+    **Prompt**
+
+    Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue. Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively. Note: You are not suppose to use the library's sort function for this problem.
+
+    Example:
+    ~~~~
+    Input: [2,0,2,1,1,0]
+    Output: [0,0,1,1,2,2]
+    ~~~~
+
+    Follow up: A rather straight forward solution is a two-pass algorithm using counting sort. First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's. Could you come up with a one-pass algorithm using only constant space?
+
+    We need to keep track of where the next _sorted_ element should be, and there are 2 potential places that can be in the list: a new red item or a new white item (we can leave the blue ones be because they'll all be sorted correctly by the other two colors swapping them into place). So we need a red pointer and white pointer for where the next item of each color should be inserted. 
+    ~~~~
+    w
+    r
+    [2,0,2,1,1,0]      
+    i                  # nums[i] == 2 skip
+    i                # nums[i] == 0, swap with r, add one to r and since r is > white rn, move w
+
+    w
+    r
+    [0,2,2,1,1,0]       
+        i              # nums[i] == 2 skip
+        i            # nums[i] == 1, swap with w, add one to w
+        w
+    r 
+    [0,1,2,2,1,0]
+            i          # nums[i] == 1, swap with w, add one to w
+        w
+    r  
+    [0,1,1,2,2,0]
+            i        # nums[i] == 0, swap with r and add one to r BUT 2 things.
+        w
+        r
+    [0,0,1,2,2,1]       # can't move forward until you ALSO swap the 1, so we should do both checks
+                        # each time, if it's 0 then if it's 1. 
+                        # ALSO: this time we didn't want to move w forward even though we moved r up
+                        # we only want to move w forward on r change if r > w, so set w = max(w, r)
+            w
+        r               
+    [0,0,1,1,2,2] # success
+    ~~~~
+
+    **Space and Time Complexity**
+
+    We loop through the list once, and swaps are `O(1)` so runtime is `O(n)`. Space complexity is `O(1)`.
+
+    ```python3
+    class SortColors:
+        def sortColors(self, nums: List[int]) -> None:
+            """
+            Do not return anything, modify nums in-place instead.
+            """
+            n = len(nums)
+            if n <= 1: return
+            r = w = 0
+            for i in range(n):
+                if nums[i] == 0:
+                    nums[r], nums[i] = nums[i], nums[r]
+                    r += 1
+                    w = max(r, w)
+                if nums[i] == 1:
+                    nums[w], nums[i] = nums[i], nums[w]
+                    w += 1
+    ```
+
+    ### **Pancake Sorting**
+
+    **Prompt**
+
+    Given an array A, we can perform a pancake flip: We choose some positive integer k <= A.length, then reverse the order of the first k elements of A.  We want to perform zero or more pancake flips (doing them one after another in succession) to sort the array A.
+    
+    Return the k-values corresponding to a sequence of pancake flips that sort A.  Any valid answer that sorts the array within 10 * A.length flips will be judged as correct.
+    
+    **Solution**
+
+    The simplest solution I could think of was to find the biggest item, flip it to the front, and then flip the entire list so it gets to the back. Once you've done that, you can approach the list as 1 element shorter than before, so that you don't mess with that last sorted element. If the largest element is already in the correct spot, you don't want to flip anything. The flip itself just requires reversing some portion of the list. 
+    
+    **Space and Time Complexity**
+
+    This process is super inefficient because you need to loop through the whole list and then loop again each time to find the largest element, so it's `O(n^2)`. the space used is to track the number of flips, which can't be more than twice the number of elements in the list, which reduces to `O(n)`. 
+    
+    ```python3
+    class Solution:
+        def pancakeSort(self, A: List[int]) -> List[int]:
+            n = len(A)
+            self.arr = A
+            if n <= 1: return self.arr
+            flips = []
+            for i in range(n):
+                maxEl, maxI = self.arr[0], 0
+                for j in range(n - i):
+                    if self.arr[j] > maxEl:
+                        maxEl, maxI = self.arr[j], j
+                if maxI != n - 1 - i:
+                    self.flip(maxI)
+                    flips.append(maxI + 1)
+                    if n - 1 - i != 0:
+                        self.flip(n - 1 - i)
+                        flips.append(n - i) 
+            return flips
+    
+        def flip(self, k):
+            for i in range((k + 1) //2):
+                self.arr[i], self.arr[k - i] = self.arr[k - i], self.arr[i]
+    ```

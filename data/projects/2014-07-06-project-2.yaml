@@ -1,8 +1,165 @@
 modalID: 2
 title: Recursion
-date: 2014-07-06
+date: 2020-02-15
 img: recursion.jpg
-client: Start Bootstrap
-clientLink: "#"
+client: See More
+clientLink: "https://github.com/lschachter/algorithm-practice/blob/master/Recursion.ipynb"
 category: Problems
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel enim aliquid dicta ullam in repellendus amet perspiciatis adipisci architecto obcaecati sit voluptas ipsam, deleniti neque placeat tenetur cum tempore velit.
+description: |
+    ### **Invert Tree**
+
+    **Prompt**
+
+    Invert a binary tree.
+    Example:
+
+    Input:
+    ~~~~
+         4
+       /   \
+      2     7
+     / \   / \
+    1   3 6   9
+    ~~~~
+    Output:
+    ~~~~
+         4
+       /   \
+      7     2
+     / \   / \
+    9   6 3   1
+    ~~~~
+
+    **Solution** 
+    
+    A classic. At each node you have to invert that node's left and right pointers and then continue in a basic traversal. And that's it!
+
+    **Space and Time Complexity**
+    
+    We are doing a simple traversal of the tree, so the runtime is `O(n)`. Because we're solving recursively, the recursion stack space used is also `O(n)`.
+
+    ```python3
+    # Definition for a binary tree node.
+    # class TreeNode:
+    #     def __init__(self, x):
+    #         self.val = x
+    #         self.left = None
+    #         self.right = None
+
+    class InvertTree:
+        def invertTree(self, root: TreeNode) -> TreeNode:
+            if root:
+                root.left, root.right = root.right, root.left
+                self.invertTree(root.left)
+                self.invertTree(root.right)
+            return root
+    ```
+
+
+    ### **Search Matrix**
+    **Prompt**
+    
+    Write an efficient algorithm that searches for a value in an m x n matrix. In this matrix, integers in each row are sorted from left to right and the first integer of each row is greater than the last integer of the previous row.
+
+    **Solution**
+    
+    We need to do a binary search to find which row we need, and then from there a classic binary search on the row we came up with. I arbitrarily chose to use the last elements in each row to compare to. The special cases of this problem are that a target may be less than the element being compared, but may still be in that row. Therefore, when `start == end`, we actually need to check that row. 
+
+    **Space and Time Complexity**
+    
+    This is kind of a hilarious solution. The runtime is `O(logn + logm)`, as is the space complexity.
+
+    ```python3
+    class SearchMatrix:
+        def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+            if not matrix or not matrix[0]: return False
+            self.grid = matrix
+            self.t = target
+            self.found = False
+            rowI = self.findRow(0, len(self.grid) - 1)
+            if rowI == -1: return False
+            if self.found: return self.found
+            self.row = self.grid[rowI]
+            self.findNum(0, len(self.row) - 1)
+            return self.found
+        
+        def findRow(self, start, end):
+            if start > end:
+                return -1
+            mid = start + (end - start) //2
+            if self.grid[mid][-1] == self.t:
+                self.found = True
+                return
+            if start == end:
+                return start
+            if self.grid[mid][-1] > self.t:
+                return self.findRow(start, mid)
+            else:
+                return self.findRow(mid + 1, end)
+                
+        def findNum(self, start, end):
+            if start >= end: return
+            mid = start + (end - start) //2
+            if self.row[mid] == self.t:
+                self.found = True
+                return
+            if self.row[mid] > self.t:
+                self.findNum(start, mid)
+            else:
+                self.findNum(mid + 1, end)    
+    ```
+
+
+    ### **Construct Binary Tree from Inorder and Postorder Traversal**
+
+    **Prompt** 
+    
+    Given inorder and postorder traversal of a tree, construct the binary tree.
+    
+    Note: You may assume that duplicates do not exist in the tree. For example, given `inorder = [9,3,15,20,7], postorder = [9,15,7,20,3]`, return the following binary tree:
+
+    ```
+        3
+       / \
+      9  20
+        /  \
+       15   7
+    ```
+
+    **Solution** 
+    
+    The puzzle here is to figure out how to find the order of the nodes. Neither traversal gives you all the info you need. So where to start? Postorder requires that for every parent node, all nodes below that parent (child, grandchild, etc) appear before it. This means that the root of the tree will always be the last item in the list because it is the initial parent. You can then take that value and know in the inorder traversal that everything to the left of the root value (this problem requires that all values in the tree are unique) is the left subtree of the root, and everything to the right is its right subtree. You can then pop the root off of the postorder list and break the inorder list around the root so that you don't ever look at it twice. Then to find the root of each subtree, repeat the process. You have to start with the right subtree every time, because the postorder traversal was built from left to right, so building it back up requires that you start from the back, ie the right. The root's right child must be set to whatever the function returns recursively when called on the updated traversals (removing the current root) and the root itself. 
+
+    **Space and Time Complexity** 
+    
+    Worst case, this solution is actually `O(n^2)`. For each value from the postorder list, you need to find its index in the inorder list. This is a `O(n)` procedure, occuring on each of `n` nodes. If the entire tree is a single branch off to the left, it will need to loop through all of the lower level nodes every time it creates a new node. The average runtime, however, is much better. We are also not using any space other than the recursive stack and the nodes we create. We only actually recurse `n` times, and there are `n` nodes (additional, not multiplicative), so the space complexity is `O(n)`. 
+
+    ```python3
+    # Definition for a binary tree node.
+    # class TreeNode:
+    #     def __init__(self, x):
+    #         self.val = x
+    #         self.left = None
+    #         self.right = None
+
+    class Solution:
+        def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
+            if not inorder: return 
+            root = postorder.pop(-1)
+            return self.constructBranch(root, inorder, postorder)
+    
+        def constructBranch(self, root, inorder, postorder):
+            rootNode = TreeNode(root)
+            inLen = len(inorder)
+            if inLen == 0 or inLen == 1: return rootNode
+            inRootI = inorder.index(root)
+            if inRootI != inLen - 1:
+                inR = inorder[inRootI + 1:]
+                root = postorder.pop(-1)
+                rootNode.right = self.constructBranch(root, inR, postorder)
+            if inRootI != 0:
+                inL = inorder[:inRootI]
+                root = postorder.pop(-1)
+                rootNode.left = self.constructBranch(root, inL, postorder)
+            return rootNode
+    ```

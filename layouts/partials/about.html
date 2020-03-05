@@ -5,6 +5,7 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 {{ with .Site.Params.about.headline }}
                     <h2 class="section-heading">{{ . }}</h2>
+                    <hr class="light">
                 {{ end }}
                 {{ if and .Site.Params.about.headline .Site.Params.about.description }}
                     <hr class="light">

@@ -1,8 +1,131 @@
 modalID: 4
 title: Arrays
-date: 2014-07-09
+date: 2020-01-05
 img: arrays.jpg
-client: Start Bootstrap
-clientLink: "#"
+client: See More
+clientLink: "https://github.com/lschachter/algorithm-practice/blob/master/Arrays.ipynb"
 category: Problems
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel enim aliquid dicta ullam in repellendus amet perspiciatis adipisci architecto obcaecati sit voluptas ipsam, deleniti neque placeat tenetur cum tempore velit.
+description: |
+    ### **Valid Palindrome**
+
+    **Prompt**
+
+    Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. Note: For the purpose of this problem, we define empty string as valid palindrome.
+
+    **Solution**
+    
+    We know that we need to start at each end and compare as we move towards the middle. This suggests the use of a two-pointer solution. We can start a pointer at each end and move each one until they are both pointing to alphanumeric characters. We can then compare these characters (lowered or capitalized, etc), return `False` if they are different, or continue if they are the same. 
+    ~~~~
+         p1
+                                       p2
+    ex: "A man, a plan, a canal: Panama."
+    ~~~~
+    `s[p2] = "."` so subtract one from it and continue until it's pointing to an alphanumeric character. `"A".lower() == "a".lower()` so move `p1` forward and `p2` back and continue. 
+    
+    **Space and Time Complexity**
+
+    This will result in `O(n)` runtime because we are going through each each element once (and in a single pass, too!). the space complexity is `O(1)` because no matter how big the input, we are only adding space for the two pointers.
+
+
+    ```python3
+    class ValidPalindrome:
+        def isPalindrome(self, s: str) -> bool:
+            p1 = 0
+            p2 = len(s) - 1
+            while p1 < p2:
+                if not s[p1].isalnum():
+                    p1 += 1
+                    continue
+                if not s[p2].isalnum():
+                    p2 -= 1
+                    continue
+                if s[p1].lower() != s[p2].lower():
+                    return False
+                p1 += 1
+                p2 -= 1
+            return True
+    ```
+
+
+    ### **Longest Substring**
+
+    **Prompt**
+
+    Given a string, find the length of the longest substring without repeating characters. 
+    
+    **Solution**
+    
+    I don't want to create a new substring for every new character we encounter. If we have to check if a character is 'in' the existing substring, that automatically becomes `O(n)` with strings and arrays in Python. We don't need to return the substring itself in this case, just the length, so if we keep track of the indices of each character in a dictionary, is there some way for that to be helpful? (This tripped me up for a while.) The basic idea is that while the next character is not in the substring, add it to the substring. If next character IS in the substring, set `maxSub =  max(maxSub, len(substring))`, and then remove the start of the substring up to the first appearance of that character (this creates a 'sliding window' where we track the start and end of the 'window' of valid characters, moving end forward when we can and moving `start` forward when we have to). The dictionary allows us to skip to the offending index without checking every element individually (for example: 'abcdee' would need to loop all the way through till it hit the e, whereas with a dictionary tracking `{'e': 4}`, we could say `if e in dict: start = dict[e]` and go from there). If the length of the string is 1 or less, it's automatically that number of unique elements (0 or 1). So for each ending number in range(len(s)), if the letter at that index is in the dict, `start` needs to change. But it can't just change to that index in case that index is from a previous substring and would therefore set `start` BACKWARDS, tracking more elements than it should. So `start` must become `max(dict[s[end]], start)`. From there, update/set the dictionary to the current index for the current index's character. Update `maxLen = max(maxLen, (end - start + 1))` to account for the current element. Then return the maxLen.
+
+    **Space and Time Complexity**
+
+    Because we are utilizing a dictionary (which has `O(1)` `get` functionality runtime), everything we do inside the for loop is constant. The loop itself is `O(n)` runtime, resulting in `O(n)` total runtime. The space used for the dictionary is dependent on `n` as well, so the space complexity is `O(n)`. 
+
+
+    ```python3
+    class LongestSubString:
+        def lengthOfLongestSubstring(self, s: str) -> int:
+            n = len(s)
+            if n <= 1:
+                return n
+            maxLen = start = 0
+            sub = {}
+            for end in range(n):
+                if s[end] in sub:
+                    start = max(sub[s[end]] + 1, start)
+                sub[s[end]] = end
+                maxLen = max(maxLen, (end - start + 1))
+            return maxLen
+    ```
+
+
+    ### **Longest Mountain**
+
+    **Prompt**
+
+    Let's call any (contiguous) subarray `B` (of `A`) a mountain if: `B.length >= 3`, there exists some `0 < i < B.length - 1` such that `B[0] < B[1] < ... B[i-1] < B[i] > B[i+1]> ... > B[B.length - 1]` (Note that `B` could be any subarray of `A`, including the entire array `A`). Given an array `A` of integers, return the length of the longest mountain.  Return 0 if there is no mountain.
+    
+    **Solution**
+
+    We need a pointer to track the start of a mountain and one for the end (with a counter for the max mountain). From the start of the array, look for the first element whose right neighbor is > than it. So `p1` starts at 0, `p2` starts at 1 (return 0 if `len(nums) < 3`). Note: plateaus and the end of the array break a mountain, so we should keep a boolean flag for whether or not we have a mountain to count. 
+    ~~~~
+    ex: [2, 1, 4, 7, 3, 2, 5]
+         p1                  # 2 !< 1: not a mountian, move both pointers forward
+            p2
+            p1               # 1 < 4 mountain begins! mountain = True
+               p2            # while (p2 + 1) < n (while still in the array) and while right neighbor
+                  p2         # > current: keep moving p2 over. 3 !> 7 so stop
+                             # did you stop because of a plateau or the end of the array? if so
+                             # mountain = False but you still want to keep moving for next mountain. 
+                             # so regardless of mountain, keep moving p2 forward while right neighbor
+                        p2   # < current. if mountain, set maxMountian to 
+                             #  max(maxMountain, (p2 - p1 + 1)), set p1 = p2, p2 += 1 and keep going
+    ~~~~
+
+    **Space and Time Complexity**
+
+    Runtime is `O(n)`, going through each element in the list in one pass. Space is `O(1)` for the pointers and counter.
+
+    ```python3
+    class LongestMountain:
+        def longestMountain(self, A: List[int]) -> int:
+            n = len(A)
+            if n < 3: return 0
+            p1 = maxMountain = 0
+            p2 = 1
+            while p2 < n:
+                if A[p1] < A[p2]: # start mountain
+                    mountain = True
+                    while p2 < (n - 1) and A[p2 + 1] > A[p2]:
+                        p2 += 1
+                    if p2 == (n - 1) or A[p2 + 1] == A[p2]: # plateau or end on incline
+                        mountain = False
+                    # want to loop through whether still in mountain or not to get p2 to next mountain
+                    while p2 < (n - 1) and A[p2 + 1] < A[p2]:
+                        p2 += 1
+                    if mountain:
+                        maxMountain = max(maxMountain, (p2 - p1 + 1))
+                p1 = p2
+                p2 += 1
+            return maxMountain
+    ```

@@ -32,71 +32,74 @@ googleAnalytics = ""
 		brand = "Lillie Schachter"
 
 		[params.navigation.links]
-			services  = "Projects"
+			services  = "Community"
 			portfolio = "Problems"
-			contact   = "Community"
-            about     = "About"
+			contact   = "About"
+            about     = "Projects"
 
 
 	# Hero section
 	[params.hero]
 		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
 		slogan     = "Lillie Schachter"
-		subtitle   = "Hi! I’m Lillie. I like to write code and fix problems. I am a software engineer based in Brooklyn, NY. I’m also sometimes a computer science teacher, and I like to stay engaged with the CS community and give back where I can.\n\nHere you can find write ups of some of the coding questions I’ve worked through, as well as take a closer look at some projects and events I’ve worked/am currently working on."
+		subtitle   = "Hi! I’m Lillie. I am a software engineer based in Brooklyn, NY and also sometimes a computer science teacher. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve worked through, and take a look at some of the projects and events I’ve worked on."
 
 	# Service section
 	[params.services]
 		headline = "Community"
 
         [[params.services.list]]
-			icon = "icons/pygotham2018.ico"
+			img_src = "icons/pygotham2018.png"
+            img_class = "icon"
 			title = "PyGotham - 2018"
-			description = "Along with working the larger PyGotham conference, I ran the Young Coders event, a day-long workshop for 10 - 18 year olds to learn how to code with Python and  micro-controllers called micro:bits."
+			description = "Along with working the larger [PyGotham](https://2018.pygotham.org/) conference, I ran the [Young Coders](https://2018.pygotham.org/events/youngcoders/) event, a day-long workshop for 10 - 18 year olds to learn how to code with Python and  micro-controllers called micro:bits."
 
         [[params.services.list]]
-            icon = "icons/cornell_tech.ico"
+            img_src = "icons/cornell_tech.png"
+            img_class = "icon"
+            icon = "icon cornell"
             title = "Computer Science Curriculum Hackathon - 2017"
-            description = "Co-ran this Cornell Tech event held to unite computer scientists and educators of all backgrounds in creating innovative, engaging computer science K-12 curriculum."
+            description = "Co-ran this [Cornell Tech](https://www.tech.cornell.edu/) event held to unite computer scientists and educators of all backgrounds in creating innovative, engaging computer science K-12 curriculum."
 
 		[[params.services.list]]
-            icon = "icons/sxswedu.ico"
+            img_src = "icons/sxswedu.png"
+            img_class = "icon"
             title = "SXSWEdu - CS Edu: Hack Science and the World's Problems - 2017"
-            description = "Natalia Rodriguez and I were selected to give a Playground Talk at SXSW Edu discussing the pedagogy behind the American Museum of Natural History (AMNH)’s BridgeUp: STEM program."
+            description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give a Playground Talk at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History (AMNH)’s BridgeUp: STEM program."
 
         [[params.services.list]]
-            icon = "icons/conncoll.ico"
-            title = "Women in STEM at Connecticut College' Yearly Dinner Featured Speaker- 2017"
-            description = "Two years after graduating from the college (and working at the American Museum of Natural History at the time), I spoke about my experiences as a woman out in the world of STEM."
+            img_src = "icons/conncoll.png"
+            img_class = "icon"
+            title = "Featured Speaker - 'Women in STEM at Connecticut College' Yearly Dinner - 2017"
+            description = "Two years after graduating from the [college](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/) (and working at the American Museum of Natural History at the time), I spoke about my experiences as a woman out in the world of STEM."
 
 
     # Portfolio modals
 	[params.portfolio.modal]
-        client = "Client"
+        client = ""
         date = "Date"
         category = "Category"
         buttonText = "Close"
 
-    # Aside section
+    # Aside section (footer)
 	[params.aside]
-		headline = "Get the Creative Theme for Hugo"
-
-		[params.aside.button]
-			text = "Download now"
-			link = "//github.com/digitalcraftsman/hugo-creative-theme"
+		headline = "Problems"
 
 
-    # About section
+    # About section (Projects)
 	[params.about]
-		headline    = "About Me"
-		description = "I’m a Los Angeles transplant who's lived in Brooklyn for 4 years. I studied Computer Science at Connecticut College (CC) and taught it, first as a TA and then Lab Instructor at CC and then at the high school and middle school levels at the Natural History Museum here in NYC. Missing programming, I transitioned into software engineering from there. \n\nI enjoy, among other things, video games, karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing. \n\nYou can find me on LinkedIn, GitHub, or email me directly here."
+		headline    = "Projects"
+		description = ""
 
 
-	# Contact section
+	# Contact section (About)
 	[params.contact]
-		headline = "Let's Get In Touch!"
-		description = "Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!"
-		phone = "123-456-6789"
-		email = "feedback@startbootstrap.com"
+		headline = "About Me"
+        about_img = "img/lillie.png"
+		description = "I’m a Los Angeles transplant who's lived in Brooklyn for 4 years. I studied Computer Science at Connecticut College (CC) and taught it, first as a TA and then Lab Instructor at CC and then at the high school and middle school levels at the Natural History Museum here in NYC. Missing programming, I transitioned into software engineering from there. \n\nI enjoy, among other things, video games, karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing. \n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/), [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly."
+		email = "lillieschachter@gmail.com"
+        github = "https://github.com/lschachter"
+        linkedin = "https://www.linkedin.com/in/lillieschachter/"
 
 	# Google Maps section
 	# [params.location]

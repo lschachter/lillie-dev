@@ -1,8 +1,123 @@
 modalID: 5
 title: Hashmaps
-date: 2014-07-08
+date: 2020-01-19
 img: hashmaps.jpg
-client: Start Bootstrap
-clientLink: "#"
+client: See More
+clientLink: "https://github.com/lschachter/algorithm-practice/blob/master/HashMaps.ipynb"
 category: Problems
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel enim aliquid dicta ullam in repellendus amet perspiciatis adipisci architecto obcaecati sit voluptas ipsam, deleniti neque placeat tenetur cum tempore velit.
+description: |
+    ### **Find First Unique Character**
+
+    **Prompt**
+
+    Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+        
+    **Solution**
+
+    Frequency counts should always be dicts! But we want to do this in one pass, so the dict should track not only the frequncy of each letter, but also it's first appearance in the string. That way once we have the frequencies, we can loop through the keys in the dict instead of the letters in the string, which will usually have duplicates and therefore be a longer loop (as well as be `O(n)` runtime instead of `O(1)`).
+    ~~~~
+                      # index, freq
+    s = "leetcode" {'l': [0, 1], 'e': [1, 1X 2], 't': [3, 1]} etc ==>
+    {'l': [0, 1], 'e': [1, 3], 't': [3, 1], 'c': [4, 1], 'o': [5, 1], 'd': [6, 1]}
+    now we can loop through the dict, keeping track of the min index of letters that appear once.
+    ~~~~
+
+    **Space and Time Complexity**
+
+    We need to go through each letter at least once, so `O(n)` minimum runtime. Ours loops twice so `O(n + n) ==> O(n)` with an upper bound of `O(n)` on space (in the case of every letter being unique, it hits the upper bound). 
+
+    ```python3
+    class FirstUniqChar:
+        def firstUniqChar(self, s: str) -> int:
+            import math
+            chars = {}
+            lenS = len(s)
+            for i in range(lenS):
+                if s[i] in chars:
+                    chars[s[i]][1] += 1
+                else:
+                    chars[s[i]] = [i, 1]
+            minI = math.inf
+            for char in chars:
+                if chars[char][1] == 1 and chars[char][0] < minI:
+                    minI = chars[char][0]
+            if minI == math.inf:
+                return -1
+            return minI
+    ```
+
+    ### **LRU Cache**
+
+    **Prompt**
+
+    Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: `get(key)` - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1. `put(key, value)` - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item. The cache is initialized with a positive capacity. Could you do both operations in `O(1)` time complexity?
+
+    **Solution**
+    
+    We need to make a hashmap with `O(1)` runtime in both methods. But each key must track both a value and its last access. So for `put`-ting, we must keep track of if slot is the key we're looking for, if the slot is empty, and the index of the least recently used element. That way, if you get through all slots and don't find the key or an empty slot, you don't have to search again for the index to write over. This is still `O(n)` where `n` = the size of the array, but not n the number of inputs, and still average case `O(1)`. 
+    
+    I initially tried to implement this with an array the size of the capacity and then tracking the LRU element and lruIndex to overwrite when full (because using the built-in dict felt like cheating). However this method was too slow, so I used an Ordered Dict. They are perfectly designed for this problem, so from there it ended up being quite simple.
+
+    ```python3
+    class LRUCache:
+        def __init__(self, capacity: int):
+            from collections import OrderedDict
+            self.cache = OrderedDict()
+            self.cap = capacity
+            self.used = 0
+    
+        def get(self, key: int) -> int:
+            if key in self.cache:
+                val = self.cache.pop(key)
+                self.cache[key] = val
+                return val
+            return -1
+    
+        def put(self, key: int, value: int) -> None:
+            if key in self.cache:
+                self.cache.pop(key)
+                self.cache[key] = value
+            elif self.used < self.cap:
+                self.cache[key] = value
+                self.used += 1
+            else:
+                self.cache.popitem(last=False)
+                self.cache[key] = value
+    ```
+
+    ### **Alien Dictionary**
+
+    **Prompt**
+
+    In an alien language, surprisingly they also use english lowercase letters, but possibly in a different order. The order of the alphabet is some permutation of lowercase letters. Given a sequence of words written in the alien language, and the order of the alphabet, return true if and only if the given words are sorted lexicographicaly in this alien language.
+    
+    **Solution**
+    First off, we're going to have to continuously check the alphabet for ordering, so we should  minimize the cost of that by turning that into a dictionary (`O(n)` to create once, but `O(1)` to check in each comparison). Now for actually checking the order. We need to compare each word to the one next to it. If at any point something is in the wrong order, `return False`. If it's in the right order (`word1[x] < word2[x]`, NOT if they're equal), we can break out of the loop because they're good to go. But how to check if they're the same? I want to keep a boolean flag of `same = True`, and then if we break because it's correct, set `same = False` first. If `same and len(word1) > len(word2)` we can also `return False`. If we get all the way through, we can `return True`.
+    ~~~~
+    ex ["wor", "word", "world"] "worldabcefghijkmnpqstuvxyz"
+         +++    +++  # same is true but len(word1) < len(word2) so keep going
+                +++X    +++X # d > l in order, return false
+    ~~~~
+    **Space and Time Complexity**
+
+    The runtime is `O(n)` to make the hashmap + `O(n)` for the outer loop * `O(m)` where `m = len(word)` so `O(n + n*m)` --> `O(n * m)`. Space complexity is `O(x)` where `x = len(order)` for the dict, so `O(n)`. 
+
+    ```python3
+    class AlienDict:
+        def isAlienSorted(self, words: List[str], order: str) -> bool:
+            n  = len(words)
+            if n <= 1: return True
+            alph = {order[i]: i for i in range(len(order))}
+            for i in range(n - 1):
+                word1, word2 = words[i], words[i + 1]
+                m = min(len(word1), len(word2))
+                same = True
+                for j in range(m):
+                    if alph[word1[j]] > alph[word2[j]]:
+                        return False
+                    if alph[word1[j]] < alph[word2[j]]:
+                        same = False
+                        break
+                if same and len(word1) > len(word2): return False
+            return True
+    ```

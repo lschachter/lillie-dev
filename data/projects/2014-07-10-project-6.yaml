@@ -1,10 +1,142 @@
 modalID: 6
 title: Stacks, Queues & Linked Lists
-date: 2014-07-10
+date: 2019-12-28
 img: stacks.jpg
-client: Start Bootstrap
-clientLink: "#"
+client: See More
+clientLink: "https://github.com/lschachter/algorithm-practice/blob/master/LLsStacksQueues.ipynb"
 category: Problems
-description: 
+description: |
+    ### **Simplify File Path**
+
+    **Prompt**
+
+    Given an absolute path for a file (Unix-style), simplify it. Or in other words, convert it to the canonical path. In a UNIX-style file system, a period `.` refers to the current directory. Furthermore, a double period `..` moves the directory up a level. Note that the returned canonical path must always begin with a slash `/`, and there must be only a single slash `/` between two directory names. The last directory name (if it exists) must not end with a trailing `/`. Also, the canonical path must be the shortest string representing the absolute path.
     
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel enim aliquid dicta ullam in repellendus amet perspiciatis adipisci architecto obcaecati sit voluptas ipsam, deleniti neque placeat tenetur cum tempore velit.
+    **Solution**
+
+    We need to maintain the order, and pop off what was JUST seen if we encoutner a `..`. This  suggests we need a stack. We also need to separate the elements by slash (and ignore the slashes themselves for now), so we should split the string at `/`. Then for each element in THAT list, if it's needed, push it onto the stack, if it's a single period do nothing (also do nothing if it's empty, as a split `//` will result in empty strings). Or if the element is `..`, if there are elements in the stack, pop the last one off. Once we loop through the list, we can join the stack back together with a slash, and add an extra one at the front. 
+    ~~~~
+    "/a/./b/../../c/" --> 
+    ['', 'a', '.', 'b', '..', '..', 'c', ''] # s = skip, a = append to stack, p = pop from stack
+      s   a    s    a    p     p     a   s --> [a, b] --> [] --> [c]
+    now '/' + '/'.join(stack)
+    ~~~~
+
+    **Space and Time Complexity**
+
+    Splitting a string is `O(n)` runtime. We then loop through the `n` elements of that string (now list). And joining them back together at the end is another `n` cost. However, each occurs separately, so are added together `O(n + n + n) --> O(n)`. The space complexity is also `O(n)`, here for the cost of the stack and the list of elements we break the string into.
+
+    ```python3
+    class SimplifyPath:
+        def simplifyPath(self, path: str) -> str:
+            stack = []
+            dirs = path.split('/')
+            for el in dirs:
+                if not el or el == '.':
+                    continue
+                if el == '..':
+                    if stack:
+                        stack.pop(-1)
+                else:
+                    stack.append(el)
+            return '/' + '/'.join(stack)
+    ```
+
+
+    ### **Recent Ping Counter**
+
+    **Prompt**
+
+    Write a class `RecentCounter` to count recent requests. It has only one method: `ping(int t)`, where `t` represents some time in milliseconds. Return the number of pings that have been made from 3000 milliseconds ago until now. Any ping with time in `[t - 3000, t]` will count, including the current ping. It is guaranteed that every call to ping uses a strictly larger value of `t` than before.
+    
+    **Solution**
+
+    Observation: because each `t` is guaranteed to be bigger than the last, we can pop off all the pings that are too old from the front. So it's a queue! We'll need a `self.pings` to keep track of them all. 
+    ~~~~
+    in
+    [1, 100, 3001, 3002]     # if there are no pings, add this one and return 1
+    self.pings = []          # else, while t - self.pings[0] > 3000: self.pings.pop(0);
+       in
+    ...100, 3001, 3002]
+    self.pings = [1]         # add this ping to self.pings, return len(self.pings)
+    100 - 1 !> 3000 so self.pings == [1, 100] return 2; input = ...3001, 3002] 
+    3001 - 1 !> 3000 so self.pings == [1, 100, 3001] return 3; input = ...3002] 
+    3002 - 1 > 3000, pop it so self.pings = [100, 3001]
+    3002 - 100 !> 3000 so self.pings = [100, 3001, 3002] return 3
+    ~~~~
+
+    **Space and Time Complexity**
+
+    In the case that all pings in the queue must be removed, we loop through all `O(n)` of them, so that is our runtime. We also have to store those `n` pings, so our space complexity is `O(n)` as well. 
+
+    ```python3
+    class RecentCounter:
+        def __init__(self):
+            self.pings = []
+    
+        def ping(self, t: int) -> int:
+            if not self.pings:
+                self.pings.append(t)
+                return 1
+            while (t - self.pings[0]) > 3000:
+                self.pings.pop(0)
+                if not self.pings:
+                    break
+            self.pings.append(t)
+            return len(self.pings)
+    ```
+
+
+    ### **Intersection of 2 Linked Lists**
+
+    **Prompt**
+
+    Write a program to find the node at which the intersection of two singly linked lists begins.
+    
+    **Solution**
+    
+    A brute force check going through each node in one list and comparing it to each node in the other would result in a `O(n^2)` runtime, which we don't want. To combat this, we need to even out the number of nodes we see from each list.
+    ~~~~
+    1 -> 2 -> 3 -> 4 -> 
+                        5 -> 6 -> 7
+              1 -> 2-> 
+    
+    lenA = 7    # abs(7 - 5) = 2 so hop through longer list twice 
+    lenB = 5    # how do we know which is longer?
+    ~~~~
+    We'll need to loop through each list individually to count their lengths. Then if list `A` is longer than `B`, we can swap their references so that `A` is always bigger than `B` in our code. We then get the difference between their lengths, loop that many times through `A`, the longer list, and _then_ we can start comparing each node. This way if there is a node they both hit, they'll both hit it at the same time. We can then return it, and if we reach the end of either list without finding an intersection, we can confidently return that there isn't one.
+
+    **Space and Time Complexity**
+
+    Because we have inputs of different sizes, let's refer to the length of the first array as `n` and the length of the second array as `m`. First we loop through each of these to count them (but separately, not nested within the other). This is a `O(n + m)` operation. Then we loop again, through `min(n, m)`, which does add another but amortizes back down. Everything we do inside our loops is constant time, so our total runtime is `O(n + m)`. The number and size of our variables don't change based on the size of the lists, so our space complexity is constant, `O(1)`. 
+    
+    ```python3
+    class IntersectionOf2LLs:
+        def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+            tempA = headA
+            tempB = headB
+            n = 0
+            m = 0
+            while tempA:
+                n += 1
+                tempA = tempA.next
+            while tempB:
+                m += 1
+                tempB = tempB.next
+            if m > n:
+                tempA = headB
+                tempB = headA
+            else:
+                tempA = headA
+                tempB = headB
+            hops = abs(n - m)
+            for i in range(hops):
+                tempA = tempA.next
+            while tempA != tempB:
+                if not tempA or not tempB:
+                    return None
+                tempA = tempA.next
+                tempB = tempB.next
+            return tempA
+    ```
+    
