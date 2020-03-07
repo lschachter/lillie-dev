@@ -1,6 +1,6 @@
 {{ "<!-- Portfolio Modals -->" | safeHTML }}
-{{ range .Site.Data.projects }}
-<div class="portfolio-modal modal fade" id="portfolioModal{{ .modalID }}" tabindex="-1" role="dialog" aria-hidden="true">
+{{ range .range_set }}
+<div class="portfolio-modal modal fade" id="{{ .category }}{{ .modalID }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
             <div class="lr">
@@ -18,6 +18,9 @@
                         {{ if and .title .description }}
                             <hr class="star-primary">
                         {{ end }}
+                        {{ if .show_image }}
+                            <img src="img/{{ .img }}" class="img-responsive img-centered" alt="">
+                        {{ end }}
                         <div class="text-left">
                             {{ with .description }}
                                 <p>{{ . | markdownify }}</p>
@@ -27,17 +30,7 @@
                             <ul class="list-inline item-details">
                                 {{ if .client }}
                                     <li>{{ with $.Site.Params.portfolio.modal.client }}{{.}} {{ end }}
-                                        <strong><a href="{{ with .clientLink }}{{ . }}{{ else }}#{{ end }}">{{ .client }}</a></strong>
-                                    </li>
-                                {{ end }}
-                                {{ if .date }}
-                                    <li>{{ with $.Site.Params.portfolio.modal.date }}{{.}}: {{ end }}
-                                        <strong><a href="#">{{ .date }}</a></strong>
-                                    </li>
-                                {{ end }}
-                                {{ if .category }}
-                                    <li>{{ with $.Site.Params.portfolio.modal.category }}{{.}}: {{ end }}
-                                        <strong><a href="#">{{ .category }}</a></strong>
+                                        <strong><a target="_blank" href="{{ with .clientLink }}{{ . }}{{ else }}#{{ end }}">{{ .client }}</a></strong>
                                     </li>
                                 {{ end }}
                             </ul>

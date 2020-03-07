@@ -61,8 +61,6 @@ p {
 }
 
 .icon {
-    width: 100px;
-    height: 100px;
     margin: auto;
     border-style: none;
 }
@@ -326,6 +324,17 @@ header .header-content .header-content-inner p {
 
 .portfolio-box:hover .portfolio-box-caption {
     opacity: 1;
+}
+
+
+@media(max-device-width: 812px) {
+    .portfolio-box .portfolio-box-caption {
+        opacity: 1;
+    }
+
+    .project-category {
+        opacity: 0;
+    }
 }
 
 @media(min-width:768px) {

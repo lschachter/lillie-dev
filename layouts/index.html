@@ -4,7 +4,7 @@
         {{ partial "head.html" . }}
     </head>
     <body id="page-top">
-        {{ if or .Site.Params.navigation.links.services .Site.Params.navigation.links.portfolio .Site.Params.navigation.links.contact .Site.Params.navigation.links.about }}
+        {{ if or .Site.Params.navigation.links.services .Site.Params.navigation.links.portfolio .Site.Params.navigation.links.contact .Site.Params.navigation.links.projects }}
             {{ partial "nav.html" . }}
         {{ end }}
 
@@ -12,20 +12,28 @@
             {{ partial "hero.html" . }}
         {{ end }}
 
-        {{ if .Site.Params.aside }}
-            {{ partial "aside.html" . }}
+        {{ if .Site.Params.aside.problems }}
+            {{ partial "aside.html" .Site.Params.aside.problems }}
         {{ end }}
 
-        {{ if .Site.Data.projects }}
-            {{ partial "portfolio.html" . }}
+        {{ if .Site.Data.problems }}
+            {{ $range_set := .Site.Data.problems }}
+            {{ $ref_id := "portfolio" }}
+            {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
         {{ end }}
 
         {{ if .Site.Params.services.list }}
             {{ partial "services.html" . }}
         {{ end }}
 
-        {{ if .Site.Params.about }}
-            {{ partial "about.html" . }}
+        {{ if .Site.Params.aside.projects }}
+            {{ partial "aside.html" .Site.Params.aside.projects }}
+        {{ end }}
+
+        {{ if .Site.Data.projects }}
+            {{ $range_set := .Site.Data.projects }}
+            {{ $ref_id := "projects" }}
+            {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
         {{ end }}
 
         {{ if .Site.Params.contact }}
@@ -36,8 +44,14 @@
             {{ partial "location.html" . }}
         {{ end }}
 
+        {{ if .Site.Data.problems }}
+            {{ $range_set := .Site.Data.problems }}
+            {{ partial "modals.html" (dict "context" . "range_set" $range_set) }}
+        {{ end }}
+
         {{ if .Site.Data.projects }}
-            {{ partial "modals.html" . }}
+            {{ $range_set := .Site.Data.projects }}
+            {{ partial "modals.html" (dict "context" . "range_set" $range_set) }}
         {{ end }}
 
         {{ partial "js.html" . }}

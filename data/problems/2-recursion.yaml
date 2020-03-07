@@ -1,7 +1,7 @@
 modalID: 2
 title: Recursion
 date: 2020-02-15
-img: recursion.jpg
+img: portfolio/recursion.jpg
 client: See More
 clientLink: "https://github.com/lschachter/algorithm-practice/blob/master/Recursion.ipynb"
 category: Problems

@@ -1,4 +1,4 @@
-baseurl = "https://example.org/"
+baseurl = "lillie.dev"
 languageCode = "en-us"
 title = "Lillie Schachter"
 theme = "hugo-creative-theme"
@@ -20,8 +20,8 @@ googleAnalytics = ""
 
 	# To provide some metadata for search engines feel free to add some
 	# information about you and your website.
-	name = "Your name"
-	description = "Your description"
+	name = "Lillie Schachter"
+	description = "Personal Portfolio Site"
 
 	# The path must be relative to the static folder
 	favicon = "favicon.ico"
@@ -32,45 +32,48 @@ googleAnalytics = ""
 		brand = "Lillie Schachter"
 
 		[params.navigation.links]
+            portfolio = "Problems"
 			services  = "Community"
-			portfolio = "Problems"
+			projects  = "Projects"
 			contact   = "About"
-            about     = "Projects"
-
+        
 
 	# Hero section
 	[params.hero]
 		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
 		slogan     = "Lillie Schachter"
-		subtitle   = "Hi! I’m Lillie. I am a software engineer based in Brooklyn, NY and also sometimes a computer science teacher. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve worked through, and take a look at some of the projects and events I’ve worked on."
+		subtitle   = "Hi! I’m Lillie. I'm a software engineer based in Brooklyn, NY and sometimes a computer science teacher. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve worked through, and take a look at some of the projects and events I’ve worked on."
 
-	# Service section
+	# Service section (Community)
 	[params.services]
 		headline = "Community"
 
         [[params.services.list]]
 			img_src = "icons/pygotham2018.png"
-            img_class = "icon"
-			title = "PyGotham - 2018"
+			title = "PyGotham"
+            date = "2018"
+            url = "https://2018.pygotham.org/"
 			description = "Along with working the larger [PyGotham](https://2018.pygotham.org/) conference, I ran the [Young Coders](https://2018.pygotham.org/events/youngcoders/) event, a day-long workshop for 10 - 18 year olds to learn how to code with Python and  micro-controllers called micro:bits."
 
         [[params.services.list]]
             img_src = "icons/cornell_tech.png"
-            img_class = "icon"
-            icon = "icon cornell"
-            title = "Computer Science Curriculum Hackathon - 2017"
+            title = "Computer Science Curriculum Hackathon"
+            date = "2017"
+            url = "https://www.tech.cornell.edu/"
             description = "Co-ran this [Cornell Tech](https://www.tech.cornell.edu/) event held to unite computer scientists and educators of all backgrounds in creating innovative, engaging computer science K-12 curriculum."
 
 		[[params.services.list]]
             img_src = "icons/sxswedu.png"
-            img_class = "icon"
-            title = "SXSWEdu - CS Edu: Hack Science and the World's Problems - 2017"
+            title = "SXSWEdu - CS Edu: Hack Science and the World's Problems"
+            date = "2017"
+            url = "https://www.sxswedu.com/speakeryear/2017/"
             description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give a Playground Talk at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History (AMNH)’s BridgeUp: STEM program."
 
         [[params.services.list]]
             img_src = "icons/conncoll.png"
-            img_class = "icon"
-            title = "Featured Speaker - 'Women in STEM at Connecticut College' Yearly Dinner - 2017"
+            title = "Featured Speaker - 'Women in STEM at Connecticut College' Yearly Dinner"
+            date = "2017"
+            url = "https://www.conncoll.edu/"
             description = "Two years after graduating from the [college](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/) (and working at the American Museum of Natural History at the time), I spoke about my experiences as a woman out in the world of STEM."
 
 
@@ -78,18 +81,21 @@ googleAnalytics = ""
 	[params.portfolio.modal]
         client = ""
         date = "Date"
-        category = "Category"
+        category = ""
         buttonText = "Close"
 
-    # Aside section (footer)
-	[params.aside]
+
+    # Aside section
+	[params.aside.problems]
 		headline = "Problems"
+        bg_class = "call-to-action"
+        accent_class = "primary"
 
-
-    # About section (Projects)
-	[params.about]
-		headline    = "Projects"
-		description = ""
+    # Aside section
+	[params.aside.projects]
+		headline = "Projects"
+        bg_class = "bg-primary"
+        accent_class = "light"   
 
 
 	# Contact section (About)

@@ -1,0 +1,16 @@
+modalID: 2
+title: Entertainment Crossing
+img: projects/chicken.png
+show_image: True
+category: Projects
+projectLink: "https://github.com/lschachter/entertainmentCrossing"
+description: |
+    Entertainment Crossing is a single page web app built using `Flask`, `jQuery`, `BeautifulSoup`, and Google’s Search API. Enter the names of any two people with IMDb pages (the entertainment), and receive all projects that they’ve both worked on. 
+
+    ![Entertainment Crossing Input Form](img/projects/entertainment_crossing/ec_form_filled.png "Entertainment Crossing Input Form")
+
+    Behind the scenes, the code uses Google’s Search API to look for the entertainer’s names and 'imdb', looking for their IMDb pages. Once it finds them, it uses `BeautifulSoup` to scrape the two pages, then plain old Python to complete the comparison. It then uses jQuery to update the page with the information found without reloading the entire page. 
+
+    ![Entertainment Crossing Results](img/projects/entertainment_crossing/ec_results.png "Entertainment Crossing Results")
+
+    This site isn’t hosted anywhere yet, as some basic functionality and testing has not been implemented yet, but I’m working on it! If you want to run it on your local machine, you can find the code [here](https://github.com/lschachter/entertainmentCrossing) and download it from there. Or contribute! 
