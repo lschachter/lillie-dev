@@ -1,4 +1,4 @@
-baseurl = "lillie.dev"
+baseurl = "https://lillie.dev"
 languageCode = "en-us"
 title = "Lillie Schachter"
 theme = "hugo-creative-theme"
