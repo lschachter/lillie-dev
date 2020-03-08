@@ -1,7 +1,6 @@
 modalID: 4
 title: One Word Answers to Impossible Questions
 img: projects/chicken_egg.png
-show_image: True
 category: Projects
 description: |
     'One Word Answers to Impossible Questions' is a small book of philosophical questions with scientifically proven one-word answers, connected to a website that goes deeper into the science and philosophy (and in some cases opinions) behind the book’s answers. 

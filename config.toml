@@ -64,17 +64,17 @@ googleAnalytics = ""
 
 		[[params.services.list]]
             img_src = "icons/sxswedu.png"
-            title = "SXSWEdu - CS Edu: Hack Science and the World's Problems"
+            title = "SXSWEdu"
             date = "2017"
             url = "https://www.sxswedu.com/speakeryear/2017/"
-            description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give a Playground Talk at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History (AMNH)’s BridgeUp: STEM program."
+            description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give our talk, 'CS Edu: Hack Science and the World's Problems', at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History (AMNH)’s BridgeUp: STEM program."
 
         [[params.services.list]]
             img_src = "icons/conncoll.png"
-            title = "Featured Speaker - 'Women in STEM at Connecticut College' Yearly Dinner"
+            title = "'Women in STEM at Connecticut College' Yearly Dinner"
             date = "2017"
             url = "https://www.conncoll.edu/"
-            description = "Two years after graduating from the [college](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/) (and working at the American Museum of Natural History at the time), I spoke about my experiences as a woman out in the world of STEM."
+            description = "Two years after graduating (and working at the American Museum of Natural History at the time), I was asked to speak about my experiences as a woman out in the world of STEM."
 
 
     # Portfolio modals
