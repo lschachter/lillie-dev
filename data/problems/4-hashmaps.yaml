@@ -14,7 +14,7 @@ description: |
         
     **Solution**
 
-    Frequency counts should always be dicts! But we want to do this in one pass, so the dict should track not only the frequncy of each letter, but also it's first appearance in the string. That way once we have the frequencies, we can loop through the keys in the dict instead of the letters in the string, which will usually have duplicates and therefore be a longer loop (as well as be `O(n)` runtime instead of `O(1)`).
+    Frequency counts should always be dicts! But we want to do this in one pass, so the dict should track not only the frequncy of each letter, but also it's first appearance in the string. That way once we have the frequencies, we can loop through the keys in the dict instead of the letters in the string, which will usually have duplicates and therefore be a longer loop.
     ~~~~
                       # index, freq
     s = "leetcode" {'l': [0, 1], 'e': [1, 1X 2], 't': [3, 1]} etc ==>

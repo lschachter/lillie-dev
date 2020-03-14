@@ -133,3 +133,4 @@ dmypy.json
 
 # Hugo
 /themes/hugo-creative-theme/images/
+public/

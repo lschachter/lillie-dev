@@ -11,7 +11,7 @@ description: |
 
     - Written thorough unit tests for all new features and code changes
 
-    - Optimized SQL queries up to 35% with `Prefetch` and `select_related`, pinpointing problems and checking my solutions with Django's built in SQL Debugger
+    - Optimized SQL queries with `Prefetch` and `select_related`, pinpointing problems and checking my solutions with Django's built in SQL Debugger
 
     - Refactored pure `JavaScript` and `React Native` code to utilize `TypeScript` and `React Hooks`, minimizing future tech debt
     

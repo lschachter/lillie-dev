@@ -42,7 +42,7 @@ googleAnalytics = ""
 	[params.hero]
 		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
 		slogan     = "Lillie Schachter"
-		subtitle   = "Hi! I’m Lillie. I'm a software engineer based in Brooklyn, NY and sometimes a computer science teacher. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve worked through, and take a look at some of the projects and events I’ve worked on."
+		subtitle   = "Hi! I’m Lillie. I'm a software engineer and sometimes computer science teacher based in Brooklyn, NY. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve worked through, and take a look at some of the projects and events I’ve worked on."
 
 	# Service section (Community)
 	[params.services]
@@ -60,7 +60,7 @@ googleAnalytics = ""
             title = "Computer Science Curriculum Hackathon"
             date = "2017"
             url = "https://www.tech.cornell.edu/"
-            description = "Co-ran this [Cornell Tech](https://www.tech.cornell.edu/) event held to unite computer scientists and educators of all backgrounds in creating innovative, engaging computer science K-12 curriculum."
+            description = "I helped design and run this [Cornell Tech](https://www.tech.cornell.edu/) event to unite computer scientists and educators in creating innovative, interdisciplinary computer science K-12 curriculum."
 
 		[[params.services.list]]
             img_src = "icons/sxswedu.png"
