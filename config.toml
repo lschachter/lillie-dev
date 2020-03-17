@@ -67,7 +67,7 @@ googleAnalytics = ""
             title = "SXSWEdu"
             date = "2017"
             url = "https://www.sxswedu.com/speakeryear/2017/"
-            description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give our talk, 'CS Edu: Hack Science and the World's Problems', at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History (AMNH)’s BridgeUp: STEM program."
+            description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give our talk, 'CS Edu: Hack Science and the World's Problems', at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History's BridgeUp: STEM program."
 
         [[params.services.list]]
             img_src = "icons/conncoll.png"
