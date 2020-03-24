@@ -13,4 +13,7 @@ This site houses
 
 To run this project on your local machine, you'll need to have [`Hugo`](https://gohugo.io/) installed. The simplest (and suggested) way to do this is through [`Homebrew`](https://brew.sh/) with `brew install hugo`. You can verify that this worked with `hugo version`. 
 
+
+### Running Locally
+
 Once it's installed, clone this repo and `cd` into it. From there you can run `hugo server` and visit your localhost at the port it points you to (1313)!

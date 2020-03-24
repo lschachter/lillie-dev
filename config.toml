@@ -79,9 +79,6 @@ googleAnalytics = ""
 
     # Portfolio modals
 	[params.portfolio.modal]
-        client = ""
-        date = "Date"
-        category = ""
         buttonText = "Close"
 
 
@@ -102,7 +99,7 @@ googleAnalytics = ""
 	[params.contact]
 		headline = "About Me"
         about_img = "img/lillie.png"
-		description = "I’m a Los Angeles transplant who's lived in Brooklyn for 4 years. I studied Computer Science at Connecticut College (CC) and taught it, first as a TA and then Lab Instructor at CC and then at the high school and middle school levels at the Natural History Museum here in NYC. Missing programming, I transitioned into software engineering from there. \n\nI enjoy, among other things, video games, karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing. \n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/), [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. Or if you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)."
+		description = "I’m a Los Angeles transplant who's lived in Brooklyn for 4 years. I studied Computer Science at Connecticut College (CC) and taught it, first as a Lab Instructor at CC and then at the Natural History Museum here in NYC. Missing programming, I transitioned into software engineering from there. \n\nI enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI'm currently seeking full-time employment as a backend or fullstack engineer, but I'm open to other projects as well! For instance, building a site like this for you. Or writing custom Excel/Google Sheets programs to minimize administrative work.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)."
 		email = "lillieschachter@gmail.com"
         github = "https://github.com/lschachter"
         linkedin = "https://www.linkedin.com/in/lillieschachter/"
