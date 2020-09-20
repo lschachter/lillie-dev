@@ -4,7 +4,7 @@
         {{ partial "head.html" . }}
     </head>
     <body id="page-top">
-        {{ if or .Site.Params.navigation.links.services .Site.Params.navigation.links.portfolio .Site.Params.navigation.links.contact .Site.Params.navigation.links.projects }}
+        {{ if or .Site.Params.navigation.links.community .Site.Params.navigation.links.portfolio .Site.Params.navigation.links.about .Site.Params.navigation.links.projects }}
             {{ partial "nav.html" . }}
         {{ end }}
 
@@ -12,22 +12,26 @@
             {{ partial "hero.html" . }}
         {{ end }}
 
-        {{ if .Site.Params.aside.problems }}
-            {{ partial "aside.html" .Site.Params.aside.problems }}
+        {{ if .Site.Params.header.problems }}
+            {{ partial "section_header.html" .Site.Params.header.problems }}
         {{ end }}
 
         {{ if .Site.Data.problems }}
             {{ $range_set := .Site.Data.problems }}
-            {{ $ref_id := "portfolio" }}
+            {{ $ref_id := "problems" }}
             {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
         {{ end }}
 
-        {{ if .Site.Params.services.list }}
-            {{ partial "services.html" . }}
+        {{ if .Site.Params.header.community }}
+            {{ partial "section_header.html" .Site.Params.header.community }}
         {{ end }}
 
-        {{ if .Site.Params.aside.projects }}
-            {{ partial "aside.html" .Site.Params.aside.projects }}
+        {{ if .Site.Params.community.list }}
+            {{ partial "community.html" . }}
+        {{ end }}
+
+        {{ if .Site.Params.header.projects }}
+            {{ partial "section_header.html" .Site.Params.header.projects }}
         {{ end }}
 
         {{ if .Site.Data.projects }}
@@ -36,8 +40,12 @@
             {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
         {{ end }}
 
-        {{ if .Site.Params.contact }}
-            {{ partial "contact.html" . }}
+        {{ if .Site.Params.header.about }}
+            {{ partial "section_header.html" .Site.Params.header.about }}
+        {{ end }}
+
+        {{ if .Site.Params.about }}
+            {{ partial "about.html" . }}
         {{ end }}
 
         {{ if .Site.Params.location }}

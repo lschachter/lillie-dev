@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row no-gutter">
             {{ range .range_set }}
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6 bg-dark">
                     <a href="#{{ .category }}{{ .modalID }}" class="portfolio-box portfolio-link" data-toggle="modal">
                         <img src="img/{{ .img }}" class="img-responsive" alt="">
                         {{ if and .category .title }}

@@ -36,15 +36,6 @@ a:focus {
     color: #017d91;
 }
 
-#about a {
-    color: rgba(52, 52, 52, .7);
-}
-
-#about a:hover,
-#about a:focus {
-    color: rgb(52, 52, 52);
-}
-
 h1,
 h2,
 h3,
@@ -65,6 +56,10 @@ p {
     border-style: none;
 }
 
+.about_content_inner {
+    padding: 0 25px;
+}
+
 .about-img {
     max-width: 400px;
 }
@@ -83,7 +78,7 @@ p {
 }
 
 section {
-    padding: 100px 0;
+    padding: 0 0 50px 0;
 }
 
 aside {
@@ -476,6 +471,10 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-xl {
     padding: 15px 30px;
+}
+
+.contact-links a {
+    padding: 0 10%;
 }
 
 ::-moz-selection {

@@ -16,14 +16,14 @@
         {{ "<!-- Collect the nav links, forms, and other content for toggling -->" | safeHTML }}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                {{ if and .Site.Data.problems .Site.Params.navigation.links.portfolio }}
+                {{ if and .Site.Data.problems .Site.Params.navigation.links.problems }}
                     <li>
-                        <a class="page-scroll" href="#portfolio">{{ .Site.Params.navigation.links.portfolio }}</a>
+                        <a class="page-scroll" href="#problems">{{ .Site.Params.navigation.links.problems }}</a>
                     </li>
                 {{ end }}
-                {{ if and .Site.Params.services.list .Site.Params.navigation.links.services }}
+                {{ if and .Site.Params.community.list .Site.Params.navigation.links.community }}
                     <li>
-                        <a class="page-scroll" href="#services">{{ .Site.Params.navigation.links.services }}</a>
+                        <a class="page-scroll" href="#community">{{ .Site.Params.navigation.links.community }}</a>
                     </li>
                 {{ end }}
                 {{ if and .Site.Data.projects .Site.Params.navigation.links.projects }}
@@ -36,9 +36,9 @@
                     <a class="page-scroll" href="#location">{{ .Site.Params.navigation.links.location }}</a>
                 </li>
                 {{ end }}
-                {{ if and .Site.Params.contact .Site.Params.navigation.links.contact }}
+                {{ if and .Site.Params.about .Site.Params.navigation.links.about }}
                     <li>
-                        <a class="page-scroll" href="#contact">{{ .Site.Params.navigation.links.contact }}</a>
+                        <a class="page-scroll" href="#about">{{ .Site.Params.navigation.links.about }}</a>
                     </li>
                 {{ end }}
             </ul>

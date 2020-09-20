@@ -1,0 +1,19 @@
+{{ "<!-- COMMUNITY -->" | safeHTML }}
+<section id="community">
+    <div class="container">
+        <div class="row">
+            {{ range .Site.Params.community.list }}
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box community_content_inner">
+                    <a href="{{ .url }}" target="_blank"><img src="{{ .img_src }}" class="icon wow bounceIn text-primary"></a>
+                    <h3>{{ .title }}</h3>
+                    <small class="text-muted">{{ .date }}</small>
+                    {{ with .description }}
+                        <p class="text-muted">{{ . | markdownify }}</p>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

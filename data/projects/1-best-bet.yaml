@@ -3,17 +3,20 @@ title: Best Bet 55
 img: projects/bbet_logo.png
 category: Projects
 description: |
-    Best Bet 55 is an app designed to gamify sports betting. It is written using `Django Rest Framework` and `PostgreSQL` in the backend, and `React Native` and `TypeScript` in the frontend. It is hosted on `AWS`, fully `Docker`-ized to enable use of Amazon’s **Elastic Container Service (ECS)**. The app utilizes an API called `therundown` to track live game information. 
+    Best Bet 55 is an app designed to gamify sports betting without putting any money on the line. It's written with the `Django Rest Framework` and `PostgreSQL` in the backend, and `React Native` and `TypeScript` in the frontend. It is hosted on `AWS`, fully `Docker`-ized to enable use of Amazon’s **Elastic Container Service (ECS)**. The app utilizes an API called `therundown` to track live game information. 
 
-    As a Jr. Backend developer on a team of six, I have had the opportunity to contribute in many ways. I have
+    As a Backend developer on a team of six, I have
 
-    - Owned the follower functionality from back- to front- end, building new RESTful endpoints with `Django` and connecting them to the `React` app with `TypeScript`
+    - Contributed to the Django Rest Framework backend, providing RESTful APIs using high-coverage test driven development
 
-    - Written thorough unit tests for all new features and code changes
+    - Owned the follower functionality and login flow from the backend through React Native and TypeScript frontend
 
-    - Optimized SQL queries with `Prefetch` and `select_related`, pinpointing problems and checking my solutions with Django's built in SQL Debugger
+    - Aided in dockerizing and deploying multiple resources to ECS
+
+    - Optimized SQL queries with `Prefetch` and `select_related`, pinpointing problems and confirming solutions with Django's built-in SQL Debugger
 
     - Refactored pure `JavaScript` and `React Native` code to utilize `TypeScript` and `React Hooks`, minimizing future tech debt
-    
-    Next I will be creating a staging environment to match our production env in ECS. 
+
+    We are very excited to launch the Best Bet Beta as sports return!
+
     

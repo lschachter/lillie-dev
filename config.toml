@@ -21,7 +21,7 @@ googleAnalytics = ""
 	# To provide some metadata for search engines feel free to add some
 	# information about you and your website.
 	name = "Lillie Schachter"
-	description = "Personal Portfolio Site"
+	description = "Personal Portfolio Site detailing backend and fullstack engineering work"
 
 	# The path must be relative to the static folder
 	favicon = "favicon.ico"
@@ -32,80 +32,90 @@ googleAnalytics = ""
 		brand = "Lillie Schachter"
 
 		[params.navigation.links]
-            portfolio = "Problems"
-			services  = "Community"
+			problems = "Problems"
+			community = "Community"
 			projects  = "Projects"
-			contact   = "About"
-        
+			about  	  = "About"
+			
 
 	# Hero section
 	[params.hero]
 		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
 		slogan     = "Lillie Schachter"
-		subtitle   = "Hi! I’m Lillie. I'm a software engineer and sometimes computer science teacher based in Brooklyn, NY. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve worked through, and take a look at some of the projects and events I’ve worked on."
+		subtitle   = "Hi! I’m Lillie. I'm a software engineer and sometimes computer science teacher based in Brooklyn, NY. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve solved, along with some of the projects and events I’ve worked on."
 
-	# Service section (Community)
-	[params.services]
-		headline = "Community"
+	# Community
+	[params.community]
 
-        [[params.services.list]]
+		[[params.community.list]]
+			img_src = "icons/code_path.png"
+			title = "CodePath Volunteer Weeks"
+			date = "2020"
+			url = "https://codepath.org/"
+			description = "I joined [CodePath.org](https://codepath.org/)'s yearly Resume Review and Mock Interview Weeks, providing resume feedback and conducting mock interviews to help students prepare for technical interviews."
+
+		[[params.community.list]]
 			img_src = "icons/pygotham2018.png"
 			title = "PyGotham"
-            date = "2018"
-            url = "https://2018.pygotham.org/"
-			description = "Along with working the larger [PyGotham](https://2018.pygotham.org/) conference, I ran the [Young Coders](https://2018.pygotham.org/events/youngcoders/) event, a day-long workshop for 10 - 18 year olds to learn how to code with Python and  micro-controllers called micro:bits."
+			date = "2018"
+			url = "https://2018.pygotham.org/"
+			description = "Along with working the larger [PyGotham](https://2018.pygotham.org/) conference, I ran the [Young Coders](https://2018.pygotham.org/events/youngcoders/) event, a day-long workshop for 10 - 18 year olds to learn how to code with Python and  micro-controllers called [micro:bits](https://microbit.org/)."
 
-        [[params.services.list]]
-            img_src = "icons/cornell_tech.png"
-            title = "Computer Science Curriculum Hackathon"
-            date = "2017"
-            url = "https://www.tech.cornell.edu/"
-            description = "I helped design and run this [Cornell Tech](https://www.tech.cornell.edu/) event to unite computer scientists and educators in creating innovative, interdisciplinary computer science K-12 curriculum."
+		[[params.community.list]]
+			img_src = "icons/cornell_tech.png"
+			title = "Computer Science Curriculum Hackathon"
+			date = "2017"
+			url = "https://www.tech.cornell.edu/"
+			description = "I helped design and run this [Cornell Tech](https://www.tech.cornell.edu/) event to unite computer scientists and educators in creating innovative, interdisciplinary computer science K-12 curriculum."
 
-		[[params.services.list]]
-            img_src = "icons/sxswedu.png"
-            title = "SXSWEdu"
-            date = "2017"
-            url = "https://www.sxswedu.com/speakeryear/2017/"
-            description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give our talk, 'CS Edu: Hack Science and the World's Problems', at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History's BridgeUp: STEM program."
-
-        [[params.services.list]]
-            img_src = "icons/conncoll.png"
-            title = "'Women in STEM at Connecticut College' Yearly Dinner"
-            date = "2017"
-            url = "https://www.conncoll.edu/"
-            description = "Two years after graduating (and working at the American Museum of Natural History at the time), I was asked to speak about my experiences as a woman out in the world of STEM."
+		[[params.community.list]]
+			img_src = "icons/sxswedu.png"
+			title = "SXSWEdu"
+			date = "2017"
+			url = "https://www.sxswedu.com/speakeryear/2017/"
+			description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give our talk, 'CS Edu: Hack Science and the World's Problems', at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History's BridgeUp: STEM program."
 
 
-    # Portfolio modals
-	[params.portfolio.modal]
-        buttonText = "Close"
+	# Problem modals
+	[params.problem.modal]
+		buttonText = "Close"
 
 
-    # Aside section
-	[params.aside.problems]
+	# Header section
+	[params.header.problems]
 		headline = "Problems"
-        bg_class = "call-to-action"
-        accent_class = "primary"
+		bg_class = "call-to-action"
+		accent_class = "primary"
 
-    # Aside section
-	[params.aside.projects]
+	# Header section
+	[params.header.community]
+		headline = "Community"
+		bg_class = "call-to-action"
+		accent_class = "primary"
+
+	# Header section
+	[params.header.projects]
 		headline = "Projects"
-        bg_class = "bg-primary"
-        accent_class = "light"   
+		bg_class = "call-to-action"
+		accent_class = "primary"
+
+	# Header section
+	[params.header.about]
+		headline = "About Me"
+		bg_class = "call-to-action"
+		accent_class = "primary"
 
 
 	# Contact section (About)
-	[params.contact]
-		headline = "About Me"
-        about_img = "img/lillie.png"
-		description = "I’m a Los Angeles transplant who's lived in Brooklyn for 4 years. I studied Computer Science at Connecticut College (CC) and taught it, first as a Lab Instructor at CC and then at the Natural History Museum here in NYC. Missing programming, I transitioned into software engineering from there. \n\nI enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI'm currently seeking full-time employment as a backend or fullstack engineer, but I'm open to other projects as well! For instance, building a site like this for you. Or writing custom Excel/Google Sheets programs to minimize administrative work.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)."
+	[params.about]
+		about_img = "img/lillie.png"
+		description = "I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 4 years (though I'm currently back on the west coast with my folks!). I enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI studied Computer Science at Connecticut College (CC) and taught it, first as a Lab Instructor at CC and then at the Natural History Museum in New York. Missing programming, I transitioned into software engineering from there. I am currently a backend engineer at the wonderful company [Cube](https://www.cubesoftware.com/), providing financial planning & analysis tools to make finance people's lives easier.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime stay safe, stay sane, stay healthy."
 		email = "lillieschachter@gmail.com"
-        github = "https://github.com/lschachter"
-        linkedin = "https://www.linkedin.com/in/lillieschachter/"
+		github = "https://github.com/lschachter"
+		linkedin = "https://www.linkedin.com/in/lillieschachter/"
 
 	# Google Maps section
 	# [params.location]
-	# 	latitude  = "34.007850"
-	# 	longitude = "-118.499305"
-	# 	maps_api_key = ""
+	# latitude  = "34.007850"
+	# longitude = "-118.499305"
+	# maps_api_key = ""

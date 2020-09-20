@@ -1,0 +1,35 @@
+{{ "<!-- about -->" | safeHTML }}
+<section id="about">
+    <div class="container">
+        <div class="row about_content_inner">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div class="float-center">
+                    {{ with .Site.Params.about.headline }}
+                        <h2 class="section-heading">{{ . }}</h2>
+                    {{ end }}
+                    {{ if and .Site.Params.about.headline .Site.Params.about.description }}
+                        <hr class="primary">
+                    {{ end }}
+                    <img src="{{ .Site.Params.about.about_img }}" class="about-img">
+                </div>
+                
+                {{ with .Site.Params.about.description }}
+                    <p>{{ . | markdownify }}</p>
+                {{ end }}
+            </div>
+            {{ if .Site.Params.about.email }}
+                <div class="
+                {{ if .Site.Params.about.phone }}
+                    col-lg-4
+                {{ else }}
+                    col-lg-8 col-lg-offset-2
+                {{ end }}
+                 text-center contact-links">
+                    <a href="{{ .Site.Params.about.github }}" target="_blank"><i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
+                    <a href="{{ .Site.Params.about.linkedin }}" target="_blank"><i class="mx-8 fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
+                    <a href="mailto:{{ .Site.Params.about.email }}" target="_blank"><i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
