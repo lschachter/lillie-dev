@@ -42,7 +42,7 @@ googleAnalytics = ""
 	[params.hero]
 		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
 		slogan     = "Lillie Schachter"
-		subtitle   = "Hi! I’m Lillie. I'm a software engineer and sometimes computer science teacher based in Brooklyn, NY. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve solved, along with some of the projects and events I’ve worked on."
+		subtitle   = "Hi! I’m Lillie (she/her). I'm a software engineer and sometimes computer science teacher based in Brooklyn, NY. I like to write code, fix problems, and stay engaged with the CS community.\n\nHere you can find write ups of coding questions I’ve solved, along with some of the projects and events I’ve worked on."
 
 	# Community
 	[params.community]
@@ -109,7 +109,7 @@ googleAnalytics = ""
 	# Contact section (About)
 	[params.about]
 		about_img = "img/lillie.png"
-		description = "I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 4 years (though I'm currently back on the west coast with my folks!). I enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI studied Computer Science at Connecticut College (CC) and taught it, first as a Lab Instructor at CC and then at the Natural History Museum in New York. Missing programming, I transitioned into software engineering from there. I am currently a backend engineer at the wonderful company [Cube](https://www.cubesoftware.com/), providing financial planning & analysis tools to make finance people's lives easier.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime stay safe, stay sane, stay healthy."
+		description = "I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 4 years (though I'm currently back on the west coast with my folks!). I enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI studied Computer Science at Connecticut College (CC) and taught it, first as a Lab Instructor at CC and then at the Natural History Museum in New York. Missing programming, I transitioned into software engineering from there. I am currently a backend engineer at the wonderful company [Cube](https://www.cubesoftware.com/), providing financial planning & analysis tools to companies big and small.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime stay safe, stay sane, stay healthy."
 		email = "lillieschachter@gmail.com"
 		github = "https://github.com/lschachter"
 		linkedin = "https://www.linkedin.com/in/lillieschachter/"
