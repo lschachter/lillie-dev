@@ -35,6 +35,7 @@ googleAnalytics = ""
 			problems = "Problems"
 			community = "Community"
 			projects  = "Projects"
+			joys = "Joys"
 			about  	  = "About"
 			
 
@@ -48,32 +49,88 @@ googleAnalytics = ""
 	[params.community]
 
 		[[params.community.list]]
-			img_src = "icons/code_path.png"
-			title = "CodePath Volunteer Weeks"
-			date = "2020"
-			url = "https://codepath.org/"
-			description = "I joined [CodePath.org](https://codepath.org/)'s yearly Resume Review and Mock Interview Weeks, providing resume feedback and conducting mock interviews to help students prepare for technical interviews."
+			img_src = "icons/community/google_sheets.png"
+			title = "Tech Resources"
+			date = "2019 - Present"
+			url = "https://docs.google.com/spreadsheets/d/1EJoboJztLIK6I3uXePDzyNe_OU-snyHHAF9Clgo2irE"
+			description = "I maintain a curated [sheet](https://docs.google.com/spreadsheets/d/1EJoboJztLIK6I3uXePDzyNe_OU-snyHHAF9Clgo2irE) of job boards, mentorship opportunities, code practice and prep sites, and tech writers to follow. Email me to add a resource!"
 
 		[[params.community.list]]
-			img_src = "icons/pygotham2018.png"
+			img_src = "icons/community/classon_fridge.png"
+			title = "Classon Community Fridge"
+			date = "2021 - Present"
+			url = "https://www.instagram.com/classon_community_fridge/"
+			description = "The [Classon Community Fridge](https://www.instagram.com/classon_community_fridge/) partners with local markets and food establishments in Crown Heights Brooklyn to bring at-risk food to the community."
+
+		[[params.community.list]]
+			img_src = "icons/community/jtc.png"
+			title = "Justice Through Code"
+			date = "2021 - 2023"
+			url = "https://centerforjustice.columbia.edu/justicethroughcode"
+			description = "I mentored, lectured, then became Director of Technical Curriculum at Columbia University's [Justice Through Code](https://centerforjustice.columbia.edu/justicethroughcode) program, teaching justice-impacted individuals to code."
+
+		[[params.community.list]]
+			img_src = "icons/community/code_path.png"
+			title = "CodePath"
+			date = "2020 - 2021"
+			url = "https://codepath.org/"
+			description = "As part of [CodePath's](https://codepath.org/) Summer mentorship program, I ran weekly tech interview prep for 5 students over 3 months. I also volunteered in their resume review and mock interview weeks."
+
+		[[params.community.list]]
+			img_src = "icons/community/pygotham2018.png"
 			title = "PyGotham"
 			date = "2018"
 			url = "https://2018.pygotham.org/"
-			description = "Along with working the larger [PyGotham](https://2018.pygotham.org/) conference, I ran the [Young Coders](https://2018.pygotham.org/events/youngcoders/) event, a day-long workshop for 10 - 18 year olds to learn how to code with Python and  micro-controllers called [micro:bits](https://microbit.org/)."
+			description = "I worked the larger [PyGotham](https://2018.pygotham.org/) conference and ran the [Young Coders](https://2018.pygotham.org/events/youngcoders/) day-long workshop for 10 - 18 year olds to learn how to code with Python and  micro-controllers called [micro:bits](https://microbit.org/)."
 
 		[[params.community.list]]
-			img_src = "icons/cornell_tech.png"
-			title = "Computer Science Curriculum Hackathon"
+			img_src = "icons/community/cornell_tech.png"
+			title = "Curriculum Hackathon"
 			date = "2017"
 			url = "https://www.tech.cornell.edu/"
 			description = "I helped design and run this [Cornell Tech](https://www.tech.cornell.edu/) event to unite computer scientists and educators in creating innovative, interdisciplinary computer science K-12 curriculum."
+		
+		[[params.community.list]]
+			img_src = "icons/community/conncoll.png"
+			title = "Women in STEM"
+			date = "2017"
+			url = "https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/"
+			description = "The 'Women in STEM at [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)' group invited me  to be the featured speaker of their yearly dinner."
 
 		[[params.community.list]]
-			img_src = "icons/sxswedu.png"
+			img_src = "icons/community/sxswedu.png"
 			title = "SXSWEdu"
 			date = "2017"
 			url = "https://www.sxswedu.com/speakeryear/2017/"
-			description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I were selected to give our talk, 'CS Edu: Hack Science and the World's Problems', at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) discussing the pedagogy behind the American Museum of Natural History's BridgeUp: STEM program."
+			description = "[Natalia Rodriguez](https://www.linkedin.com/in/rdznatalia/) and I spoke at [SXSW Edu](https://www.sxswedu.com/speakeryear/2017/) on the pedagogy behind the American Museum of Natural History's BridgeUp: STEM program."
+
+		
+	# Joys
+	[params.joys]
+
+		[[params.joys.list]]
+			img_src = "icons/joys/dance_church.png"
+			title = "Dance Church"
+			url = "https://go.dancechurch.com/"
+			description = "[Dance Church](https://go.dancechurch.com/) (#notacult) is part dance class part dance club, all energy. I learned about it during quarantine and took the rule 'never stop dancing' to heart."
+
+		[[params.joys.list]]
+			img_src = "icons/joys/spelling-bee.png"
+			title = "The Spelling Bee"
+			url = "https://www.nytimes.com/puzzles/spelling-bee"
+			description = "The [NYT Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) has kept my mom and I both entertained and connected on a daily basis for years. Who doesn't love being called a genius?"
+
+		[[params.joys.list]]
+			img_src = "icons/joys/got_archery.png"
+			title = "Gotham Archery"
+			url = "https://www.got-archery.com/"
+			description = "Turns out archery is super fun! [Gotham Archery](https://www.got-archery.com/) has proven a delightful, safe, inviting environment for discovering a new hobby and ability."
+
+		[[params.joys.list]]
+			img_src = "icons/joys/twitch.png"
+			title = "Twitch Streaming"
+			url = "https://www.twitch.tv/maxamander"
+			description = "[@Maxamander](https://www.twitch.tv/maxamander) and I are 4 years into our twitch streaming career and going strong. Gaming with friends has built community, consistency, and actually, skill!"
 
 
 	# Problem modals
@@ -100,6 +157,12 @@ googleAnalytics = ""
 		accent_class = "primary"
 
 	# Header section
+	[params.header.joys]
+		headline = "Joys"
+		bg_class = "call-to-action"
+		accent_class = "primary"
+
+	# Header section
 	[params.header.about]
 		headline = "About Me"
 		bg_class = "call-to-action"
@@ -109,13 +172,7 @@ googleAnalytics = ""
 	# Contact section (About)
 	[params.about]
 		about_img = "img/lillie.png"
-		description = "I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 7 years. I enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI've worked as a backend enginer ([Cube](https://www.cubesoftware.com/), [Best Bet 55](https://bestbet55.com/), [Truveris](https://truveris.com/)), and as a computer science & software engineering instructor & curriculum developer ([Justice through Code at Columbia University](https://centerforjustice.columbia.edu/justicethroughcode), [The American Museum of Natural History](https://urf.columbia.edu/fellowship/helen-fellowship-amnh), [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)).\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime stay safe, stay sane, stay healthy."
+		description = "I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 7 years. I enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI've worked as a backend enginer ([Cube](https://www.cubesoftware.com/), [Best Bet 55](https://bestbet55.com/), [Truveris](https://truveris.com/)) and as a computer science instructor & curriculum developer ([Justice through Code at Columbia University](https://centerforjustice.columbia.edu/justicethroughcode), [The American Museum of Natural History](https://urf.columbia.edu/fellowship/helen-fellowship-amnh), [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)). I love to teach and I love to code, and I've had the immense privilege of being able to do both.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime stay safe, stay sane, stay healthy."
 		email = "lillieschachter@gmail.com"
 		github = "https://github.com/lschachter"
 		linkedin = "https://www.linkedin.com/in/lillieschachter/"
-
-	# Google Maps section
-	# [params.location]
-	# latitude  = "34.007850"
-	# longitude = "-118.499305"
-	# maps_api_key = ""

@@ -4,7 +4,7 @@
         {{ partial "head.html" . }}
     </head>
     <body id="page-top">
-        {{ if or .Site.Params.navigation.links.community .Site.Params.navigation.links.portfolio .Site.Params.navigation.links.about .Site.Params.navigation.links.projects }}
+        {{ if or .Site.Params.navigation.links.community .Site.Params.navigation.links.portfolio .Site.Params.navigation.links.about .Site.Params.navigation.links.projects .Site.Params.navigation.links.joys }}
             {{ partial "nav.html" . }}
         {{ end }}
 
@@ -40,16 +40,20 @@
             {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
         {{ end }}
 
+        {{ if .Site.Params.header.joys }}
+            {{ partial "section_header.html" .Site.Params.header.joys }}
+        {{ end }}
+
+        {{ if .Site.Params.joys.list }}
+            {{ partial "joys.html" . }}
+        {{ end }}
+
         {{ if .Site.Params.header.about }}
             {{ partial "section_header.html" .Site.Params.header.about }}
         {{ end }}
 
         {{ if .Site.Params.about }}
             {{ partial "about.html" . }}
-        {{ end }}
-
-        {{ if .Site.Params.location }}
-            {{ partial "location.html" . }}
         {{ end }}
 
         {{ if .Site.Data.problems }}
