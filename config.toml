@@ -118,7 +118,7 @@ googleAnalytics = ""
 			img_src = "icons/joys/spelling-bee.png"
 			title = "The Spelling Bee"
 			url = "https://www.nytimes.com/puzzles/spelling-bee"
-			description = "The [NYT Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) has kept my mom and I both entertained and connected on a daily basis for years. Who doesn't love being called a genius?"
+			description = "The [NYT Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) has kept my mom and I both entertained and connected on a daily basis for years. Who doesn't love being called a genius every day?"
 
 		[[params.joys.list]]
 			img_src = "icons/joys/got_archery.png"
@@ -129,8 +129,8 @@ googleAnalytics = ""
 		[[params.joys.list]]
 			img_src = "icons/joys/twitch.png"
 			title = "Twitch Streaming"
-			url = "https://www.twitch.tv/maxamander"
-			description = "[@Maxamander](https://www.twitch.tv/maxamander) and I are 4 years into our twitch streaming career and going strong. Gaming with friends has built community, consistency, and actually, skill!"
+			url = "http://maxamander.tv"
+			description = "[@Maxamander](http://maxamander.tv) and I are 4 years into our twitch streaming career and going strong. Gaming with friends has built community, consistency, and actually, skill!"
 
 
 	# Problem modals
@@ -172,7 +172,7 @@ googleAnalytics = ""
 	# Contact section (About)
 	[params.about]
 		about_img = "img/lillie.png"
-		description = "I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 7 years. I enjoy, among other things, [video games](https://www.twitch.tv/maxamander), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI've worked as a backend enginer ([Cube](https://www.cubesoftware.com/), [Best Bet 55](https://bestbet55.com/), [Truveris](https://truveris.com/)) and as a computer science instructor & curriculum developer ([Justice through Code at Columbia University](https://centerforjustice.columbia.edu/justicethroughcode), [The American Museum of Natural History](https://urf.columbia.edu/fellowship/helen-fellowship-amnh), [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)). I love to teach and I love to code, and I've had the immense privilege of being able to do both.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime stay safe, stay sane, stay healthy."
+		description = "I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 7 years. I enjoy, among other things, [video games](http://maxamander.tv), karaoke, and potatoes. So many potatoes. Literally the background image on my computer is a stock image of mashed potatoes, it’s a thing.\n\nI've worked as a backend enginer ([Cube](https://www.cubesoftware.com/), [Best Bet 55](https://bestbet55.com/), [Truveris](https://truveris.com/)) and as a computer science instructor & curriculum developer ([Justice through Code at Columbia University](https://centerforjustice.columbia.edu/justicethroughcode), [The American Museum of Natural History](https://urf.columbia.edu/fellowship/helen-fellowship-amnh), [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)). I love to teach and I love to code, and I've had the immense privilege of being able to do both.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime stay safe, stay sane, stay healthy."
 		email = "lillieschachter@gmail.com"
 		github = "https://github.com/lschachter"
 		linkedin = "https://www.linkedin.com/in/lillieschachter/"
