@@ -12,16 +12,6 @@
             {{ partial "hero.html" . }}
         {{ end }}
 
-        {{ if .Site.Params.header.problems }}
-            {{ partial "section_header.html" .Site.Params.header.problems }}
-        {{ end }}
-
-        {{ if .Site.Data.problems }}
-            {{ $range_set := .Site.Data.problems }}
-            {{ $ref_id := "problems" }}
-            {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
-        {{ end }}
-
         {{ if .Site.Params.header.community }}
             {{ partial "section_header.html" .Site.Params.header.community }}
         {{ end }}
@@ -48,6 +38,16 @@
             {{ partial "joys.html" . }}
         {{ end }}
 
+        {{ if .Site.Params.header.problems }}
+            {{ partial "section_header.html" .Site.Params.header.problems }}
+        {{ end }}
+
+        {{ if .Site.Data.problems }}
+            {{ $range_set := .Site.Data.problems }}
+            {{ $ref_id := "problems" }}
+            {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
+        {{ end }}
+
         {{ if .Site.Params.header.about }}
             {{ partial "section_header.html" .Site.Params.header.about }}
         {{ end }}
@@ -55,6 +55,8 @@
         {{ if .Site.Params.about }}
             {{ partial "about.html" . }}
         {{ end }}
+
+        
 
         {{ if .Site.Data.problems }}
             {{ $range_set := .Site.Data.problems }}

@@ -16,11 +16,6 @@
         {{ "<!-- Collect the nav links, forms, and other content for toggling -->" | safeHTML }}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                {{ if and .Site.Data.problems .Site.Params.navigation.links.problems }}
-                    <li>
-                        <a class="page-scroll" href="#problems">{{ .Site.Params.navigation.links.problems }}</a>
-                    </li>
-                {{ end }}
                 {{ if and .Site.Params.community.list .Site.Params.navigation.links.community }}
                     <li>
                         <a class="page-scroll" href="#community">{{ .Site.Params.navigation.links.community }}</a>
@@ -34,6 +29,11 @@
                 {{ if and .Site.Params.joys.list .Site.Params.navigation.links.joys }}
                     <li>
                         <a class="page-scroll" href="#joys">{{ .Site.Params.navigation.links.joys }}</a>
+                    </li>
+                {{ end }}
+                {{ if and .Site.Data.problems .Site.Params.navigation.links.problems }}
+                    <li>
+                        <a class="page-scroll" href="#problems">{{ .Site.Params.navigation.links.problems }}</a>
                     </li>
                 {{ end }}
                 {{ if and .Site.Params.about .Site.Params.navigation.links.about }}
