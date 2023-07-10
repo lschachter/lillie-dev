@@ -1,16 +1,26 @@
 {{ "<!-- HEADER -->" | safeHTML }}
 <header>
-    <div class="header-content">
-        <div class="header-content-inner">
+    <div class="header-content container">
+        <div class="row header-content-inner">
             {{ with .Site.Params.hero.slogan }}
                 <h1>{{ . | markdownify  }}</h1>
             {{ end }}
-            {{ if and .Site.Params.hero.slogan .Site.Params.hero.subtitle }}
-                <hr>
-            {{ end }}
-            {{ with .Site.Params.hero.subtitle }}
-                <p>{{ . | markdownify }}</p>
-            {{ end }}
+            <div class="row about_content_inner text-center">
+                <div class="col-md-6">
+                    {{ with .Site.Params.about.headline }}
+                        <h2 class="section-heading">{{ . }}</h2>
+                    {{ end }}
+                    {{ if and .Site.Params.about.headline .Site.Params.about.description }}
+                        <hr class="primary">
+                    {{ end }}
+                    <img src="{{ .Site.Params.about.about_img }}" class="about-img">
+                </div>
+                <div class="col-md-6">
+                {{ with .Site.Params.about.description }}
+                    <p>{{ . | markdownify }}</p>
+                {{ end }}
+                </div>
+            </div>
         </div>
     </div>
 </header>

@@ -18,13 +18,11 @@
             </div>
         </div>
         <div class="row">
-            {{ if .Site.Params.about.email }}
-                <div class="col-lg-8 col-lg-offset-2 about_content_inner text-center contact-links">
-                    <a href="{{ .Site.Params.about.github }}" target="_blank"><i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
-                    <a href="{{ .Site.Params.about.linkedin }}" target="_blank"><i class="mx-8 fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
-                    <a href="mailto:{{ .Site.Params.about.email }}" target="_blank"><i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
-                </div>
-            {{ end }}
+            <div class="col-lg-8 col-lg-offset-2 about_content_inner text-center contact-links">
+                <a href="{{ .Site.Params.about.github }}" target="_blank"><i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
+                <a href="{{ .Site.Params.about.linkedin }}" target="_blank"><i class="mx-8 fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
+                <a href="mailto:{{ .Site.Params.about.email }}" target="_blank"><i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i></a>
+            </div>
         </div>
     </div>
 </section>

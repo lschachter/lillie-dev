@@ -8,8 +8,12 @@
             {{ partial "nav.html" . }}
         {{ end }}
 
-        {{ if .Site.Params.hero }}
-            {{ partial "hero.html" . }}
+        {{ if .Site.Params.header.about }}
+            {{ partial "section_header.html" .Site.Params.header.about }}
+        {{ end }}
+
+        {{ if .Site.Params.about }}
+            {{ partial "about.html" . }}
         {{ end }}
 
         {{ if .Site.Params.header.community }}
@@ -48,15 +52,6 @@
             {{ partial "portfolio.html" (dict "context" . "range_set" $range_set "ref_id" $ref_id) }}
         {{ end }}
 
-        {{ if .Site.Params.header.about }}
-            {{ partial "section_header.html" .Site.Params.header.about }}
-        {{ end }}
-
-        {{ if .Site.Params.about }}
-            {{ partial "about.html" . }}
-        {{ end }}
-
-        
 
         {{ if .Site.Data.problems }}
             {{ $range_set := .Site.Data.problems }}
