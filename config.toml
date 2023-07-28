@@ -63,18 +63,25 @@ googleAnalytics = ""
 			description = "The [Classon Community Fridge](https://www.instagram.com/classon_community_fridge/) partners with local markets and food establishments in Crown Heights Brooklyn to bring at-risk food to the community."
 
 		[[params.community.list]]
+			img_src = "icons/community/digital_defense_fund.png"
+			title = "Techies for Reproductive Justice"
+			date = "2022 - Present"
+			url = "https://digitaldefensefund.org/"
+			description = "An open source volunteer community working towards bodily autonomy for all via the [Digital Defense Fund](https://digitaldefensefund.org/). All tech experience welcome!"
+
+		[[params.community.list]]
 			img_src = "icons/community/jtc.png"
 			title = "Justice Through Code"
 			date = "2021 - 2023"
 			url = "https://centerforjustice.columbia.edu/justicethroughcode"
-			description = "I mentored, lectured, then became Director of Technical Instruction at Columbia University's [Justice Through Code](https://centerforjustice.columbia.edu/justicethroughcode) program, teaching justice-impacted individuals to code."
+			description = "I first mentored, lectured, and then became Director of Technical Instruction at Columbia University's [Justice Through Code](https://centerforjustice.columbia.edu/justicethroughcode) program, teaching justice-impacted individuals to code."
 
 		[[params.community.list]]
 			img_src = "icons/community/code_path.png"
 			title = "CodePath"
 			date = "2020 - 2021"
 			url = "https://codepath.org/"
-			description = "As part of [CodePath's](https://codepath.org/) Summer mentorship program, I ran weekly tech interview prep for 5 students over 3 months. I also volunteered in their resume review and mock interview weeks."
+			description = "As part of [CodePath's](https://codepath.org/) Summer mentorship program, I ran weekly tech interview prep for 5 students over 3 months. I also volunteered in their resume review and mock interviews."
 
 		[[params.community.list]]
 			img_src = "icons/community/pygotham2018.png"
@@ -89,13 +96,6 @@ googleAnalytics = ""
 			date = "2017"
 			url = "https://www.tech.cornell.edu/"
 			description = "I helped design and run this [Cornell Tech](https://www.tech.cornell.edu/) event to unite computer scientists and educators in creating innovative, interdisciplinary computer science K-12 curriculum."
-		
-		[[params.community.list]]
-			img_src = "icons/community/conncoll.png"
-			title = "Women in STEM"
-			date = "2017"
-			url = "https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/"
-			description = "The 'Women in STEM at [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)' group invited me  to be the featured speaker of their yearly dinner."
 
 		[[params.community.list]]
 			img_src = "icons/community/sxswedu.png"
