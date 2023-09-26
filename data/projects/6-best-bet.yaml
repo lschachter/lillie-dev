@@ -1,0 +1,20 @@
+modalID: 6
+title: Best Bet 55
+img: projects/bbet_logo.jpg
+category: Projects
+description: |
+  Best Bet 55 is an app designed to gamify sports betting without putting any money on the line. It's written with the `Django Rest Framework` and `PostgreSQL` in the backend, and `React Native` and `TypeScript` in the frontend. It is hosted on `AWS`, fully `Docker`-ized to enable use of Amazon’s **Elastic Container Service (ECS)**. The app utilizes an API called `therundown` to track live game information. 
+
+  As a Backend developer on a team of six, I have
+
+  - Contributed to the Django Rest Framework backend, providing RESTful APIs using high-coverage test driven development
+
+  - Owned the follower functionality and login flow from the backend through React Native and TypeScript frontend
+
+  - Aided in dockerizing and deploying multiple resources to ECS
+
+  - Optimized SQL queries with `Prefetch` and `select_related`, pinpointing problems and confirming solutions with Django's built-in SQL Debugger
+
+  - Refactored pure `JavaScript` and `React Native` code to utilize `TypeScript` and `React Hooks`, minimizing future tech debt
+
+  Best Bet is no longer available in the App store, but you can learn more about it [here](https://bestbet55.com/).

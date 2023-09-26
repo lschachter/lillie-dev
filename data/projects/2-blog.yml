@@ -1,0 +1,10 @@
+modalID: 2
+title: Blog
+img: projects/medium.png
+category: Projects
+client: Check out my latest articles
+clientLink: "https://medium.com/@lillieschachter"
+description: |
+  I have a blog! You can find my most recent articles on [Medium](https://medium.com/@lillieschachter). So far I write about software development projects I've done in my own time.
+
+  I also plan on turning some of my LeetCode solutions, found below in the 'Problems' section, into articles to help walk through how to study data structures and algorithms for software engineering interviews. Stay tuned to see what else I write about!
