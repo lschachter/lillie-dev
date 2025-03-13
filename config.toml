@@ -53,28 +53,28 @@ googleAnalytics = ""
 			title = "Tech Resources"
 			date = "2019 - Present"
 			url = "https://docs.google.com/spreadsheets/d/1EJoboJztLIK6I3uXePDzyNe_OU-snyHHAF9Clgo2irE"
-			description = "I maintain a curated [sheet](https://docs.google.com/spreadsheets/d/1EJoboJztLIK6I3uXePDzyNe_OU-snyHHAF9Clgo2irE) of job boards, mentorship opportunities, code practice and prep sites, and tech writers to follow. [Email me](mailto:lillieschachter@gmail.com) to add a resource!"
+			description = "I maintain a curated [sheet](https://docs.google.com/spreadsheets/d/1EJoboJztLIK6I3uXePDzyNe_OU-snyHHAF9Clgo2irE) of job boards, mentorship opportunities, and code practice and prep sites. [Email me](mailto:lillieschachter@gmail.com) to add a resource!"
 
 		[[params.community.list]]
 			img_src = "icons/community/classon_fridge.png"
 			title = "Classon Community Fridge"
 			date = "2021 - Present"
 			url = "https://www.instagram.com/classon_community_fridge/"
-			description = "The [Classon Community Fridge](https://www.instagram.com/classon_community_fridge/) partners with local markets and food establishments in Crown Heights Brooklyn to bring at-risk food to the community."
+			description = "The [Classon Community Fridge](https://www.instagram.com/classon_community_fridge/) partners with local markets and food establishments to bring at-risk food to the community."
 
 		[[params.community.list]]
 			img_src = "icons/community/digital_defense_fund.png"
 			title = "Techies for Reproductive Justice"
 			date = "2022 - Present"
 			url = "https://digitaldefensefund.org/"
-			description = "An open source volunteer community working towards bodily autonomy for all via the [Digital Defense Fund](https://digitaldefensefund.org/). All tech experience welcome!"
+			description = "An open source volunteer community working towards bodily autonomy for all via the [Digital Defense Fund](https://digitaldefensefund.org/)."
 
 		[[params.community.list]]
 			img_src = "icons/community/jtc.png"
 			title = "Justice Through Code"
 			date = "2021 - 2023"
 			url = "https://centerforjustice.columbia.edu/justicethroughcode"
-			description = "I first mentored, lectured, and then became Director of Technical Instruction at Columbia University's [Justice Through Code](https://centerforjustice.columbia.edu/justicethroughcode) program, teaching justice-impacted individuals to code."
+			description = "I first mentored, lectured, then became Director of Technical Instruction at Columbia University's [Justice Through Code](https://centerforjustice.columbia.edu/justicethroughcode) program, teaching justice-impacted individuals to code."
 
 		[[params.community.list]]
 			img_src = "icons/community/code_path.png"
@@ -112,7 +112,7 @@ googleAnalytics = ""
 			img_src = "icons/joys/dance_church.png"
 			title = "Dance Church"
 			url = "https://go.dancechurch.com/"
-			description = "[Dance Church](https://go.dancechurch.com/) (#notacult) is part dance class part dance club, all energy. I learned about it during quarantine and took the rule 'never stop dancing' to heart."
+			description = "[Dance Church](https://go.dancechurch.com/) (#notacult) is part dance class, part dance club. I learned about it during quarantine and took the rule 'never stop dancing' to heart."
 
 		[[params.joys.list]]
 			img_src = "icons/joys/spelling-bee.png"
@@ -129,8 +129,8 @@ googleAnalytics = ""
 		[[params.joys.list]]
 			img_src = "icons/joys/twitch.png"
 			title = "Twitch Streaming"
-			url = "http://maxamander.tv"
-			description = "[@Maxamander](http://maxamander.tv) and I are 4 years into our twitch streaming career and going strong. Gaming with friends has built community, consistency, and actually, skill!"
+			url = "https://www.twitch.tv/lillliepad"
+			description = "[@Maxamander](http://maxamander.tv) and I are 6 years into our twitch streaming career and going strong. Gaming with friends has built community, consistency, and actually, skill!"
 
 
 	# Problem modals
@@ -172,7 +172,7 @@ googleAnalytics = ""
 	# Contact section (About)
 	[params.about]
 		about_img = "img/lillie.png"
-		description = "Hi! I'm Lillie (she/her). I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 7 years. I enjoy, among other things, [video games](https://www.twitch.tv/lillliepad), [karaoke](https://www.instagram.com/karaokeleague/), and potatoes.\n\nI've worked as a backend engineer ([Cube](https://www.cubesoftware.com/), [Best Bet 55](https://bestbet55.com/), [Truveris](https://truveris.com/)) and as a computer science instructor & curriculum developer ([Justice through Code at Columbia University](https://centerforjustice.columbia.edu/justicethroughcode), [The American Museum of Natural History](https://urf.columbia.edu/fellowship/helen-fellowship-amnh), [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)). I love to teach and I love to code, and I've had the immense privilege of being able to do both.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime, stay safe, stay sane, stay healthy."
+		description = "Hi! I'm Lillie (she/her). I’m a Los Angeles transplant who's lived in Crown Heights Brooklyn for 8 years. I enjoy, among other things, [video games](https://www.twitch.tv/lillliepad), [karaoke](https://www.instagram.com/karaokeleague/), and potatoes.\n\nI've worked as a backend engineer ([Udacity](https://www.udacity.com/), [Cube](https://www.cubesoftware.com/), [Best Bet 55](https://bestbet55.com/), [Truveris](https://truveris.com/)) and as a computer science instructor & curriculum developer ([Justice through Code at Columbia University](https://centerforjustice.columbia.edu/justicethroughcode), [The American Museum of Natural History](https://urf.columbia.edu/fellowship/helen-fellowship-amnh), [Connecticut College](https://www.conncoll.edu/academics/majors-departments-programs/departments/computer-science/)). I love to teach and I love to code, and I've had the immense privilege of being able to do both.\n\nYou can find me on [LinkedIn](https://www.linkedin.com/in/lillieschachter/) and [GitHub](https://github.com/lschachter), or [email me](mailto:lillieschachter@gmail.com) directly. If you'd like to see my resume before reaching out, you can download it [here](LillieSchachter_Resume.pdf)! In the meantime, stay safe, stay sane, stay healthy."
 		email = "lillieschachter@gmail.com"
 		github = "https://github.com/lschachter"
 		linkedin = "https://www.linkedin.com/in/lillieschachter/"
